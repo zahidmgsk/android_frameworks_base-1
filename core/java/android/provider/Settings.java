@@ -15568,6 +15568,12 @@ public final class Settings {
          */
         public static final String LOCKSCREEN_ENABLE_POWER_MENU = "lockscreen_enable_power_menu";
 
+         /**
+         * The TCP/IP port to run ADB on, or 0 for USB
+         * @hide
+         */
+        public static final String ADB_PORT = "adb_port";
+
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
