@@ -134,4 +134,7 @@
     <string name="accessibility_quick_settings_gaming_mode_disabled">Chế độ chơi game đã tắt.</string>
     <!-- Content description of the Gaming mode tile in quick settings when enabled (not shown on the screen). [CHAR LIMIT=NONE] -->
     <string name="accessibility_quick_settings_gaming_mode_enabled">Chế độ chơi game đã bật.</string>
+    <!-- Heads up snooze toast -->
+    <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Thông báo nhìn nhanh đang báo lại trong 1 phút.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Thông báo nhìn nhanh đang báo lại trong <xliff:g id="number">%d</xliff:g> phút.</string>
 </resources>
