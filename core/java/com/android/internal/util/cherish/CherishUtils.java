@@ -49,6 +49,11 @@ import com.android.internal.R;
 import com.android.internal.statusbar.IStatusBarService;
 import android.util.DisplayMetrics;
 import java.util.List;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Locale;
 public class CherishUtils {
 	
@@ -173,6 +178,21 @@ public class CherishUtils {
                 }
             }
         }
+    }
+	
+	// Method to detect if device has DASH support.
+    public static boolean isDashCharger() {
+        try {
+            FileReader file = new FileReader("/sys/class/power_supply/battery/fastchg_status");
+            BufferedReader br = new BufferedReader(file);
+            String state = br.readLine();
+            br.close();
+            file.close();
+            return "1".equals(state);
+        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
+        }
+        return false;
     }
 
     public static void sendKeycode(int keycode) {
