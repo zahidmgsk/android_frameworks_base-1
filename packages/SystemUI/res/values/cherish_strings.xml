@@ -208,5 +208,9 @@
 
     <!-- QS Header data usage info -->
     <string name="usage_data">used</string>
+
+    <!-- Lockscreen tuner -->
+    <string name="lockscreen_default">Default</string>
+    <string name="lockscreen_hidden">None</string>
  
 </resources>
