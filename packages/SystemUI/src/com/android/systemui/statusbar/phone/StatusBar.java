@@ -5081,6 +5081,10 @@ public class StatusBar extends SystemUI implements DemoMode,
 			resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.LESS_BORING_HEADS_UP),
                     false, this, UserHandle.USER_ALL);
+			resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_STOPLIST_VALUES), false, this);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.HEADS_UP_BLACKLIST_VALUES), false, this);
         }
 
         @Override
@@ -5132,7 +5136,19 @@ public class StatusBar extends SystemUI implements DemoMode,
 			setPulseOnNewTracks();
 			setGamingMode();
 			setUseLessBoringHeadsUp();
+			setHeadsUpStoplist();
+            setHeadsUpBlacklist();
         }
+    }
+	
+	private void setHeadsUpStoplist() {
+        if (mPresenter != null)
+            mPresenter.setHeadsUpStoplist();
+    }
+
+    private void setHeadsUpBlacklist() {
+        if (mPresenter != null)
+            mPresenter.setHeadsUpBlacklist();
     }
 	
 	private void setGamingMode() {
