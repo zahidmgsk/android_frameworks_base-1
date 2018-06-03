@@ -514,6 +514,10 @@ public class NotificationPanelView extends PanelView implements
         return mKeyguardStatusView.hasCustomClockInBigContainer();
     }
 	
+    public KeyguardStatusView getKeyguardStatusView() {
+        return mKeyguardStatusView;
+    }
+
     private void setStatusBar(StatusBar bar) {
         mStatusBar = bar;
         mKeyguardBottomArea.setStatusBar(mStatusBar);
