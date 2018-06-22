@@ -5221,6 +5221,12 @@ public final class Settings {
          * @hide
          */
         public static final String QS_PANEL_BG_COLOR = "qs_panel_bg_color";
+		
+		/**
+         * Whether to use framework styles and resources on qs panel
+         * @hide
+         */
+        public static final String QS_PANEL_BG_USE_FW = "qs_panel_bg_use_fw";
 
         /**
          * IMPORTANT: If you add a new public settings you also have to add it to
@@ -6731,7 +6737,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_ADJUSTMENT);
             PRIVATE_SETTINGS.add(DISPLAY_PICTURE_ADJUSTMENT);
             PRIVATE_SETTINGS.add(LIVE_DISPLAY_HINTED);
-<<<<<<< HEAD
 			 PRIVATE_SETTINGS.add(POCKET_JUDGE);
             PRIVATE_SETTINGS.add(HEADS_UP_STOPLIST_VALUES);
             PRIVATE_SETTINGS.add(HEADS_UP_BLACKLIST_VALUES);
@@ -6748,6 +6753,7 @@ public final class Settings {
            PRIVATE_SETTINGS.add(VIBRATE_ON_DISCONNECT);
 		   PRIVATE_SETTINGS.add(QS_PANEL_BG_ALPHA);
 		   PRIVATE_SETTINGS.add(QS_PANEL_BG_COLOR);
+            PRIVATE_SETTINGS.add(QS_PANEL_BG_USE_FW);
         }
 
         /**
