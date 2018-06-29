@@ -29,5 +29,8 @@
 
     <!-- Whether to show biometric help only when failed -->
     <bool name="config_biometricHelpShowOnlyWhenFailed">false</bool>
+	
+	<!-- Whether to show VoLTE icon in the status bar -->
+    <bool name="config_display_volte">true</bool>
 
 </resources>
