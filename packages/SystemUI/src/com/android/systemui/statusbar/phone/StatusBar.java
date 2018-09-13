@@ -246,6 +246,7 @@ import com.android.systemui.statusbar.policy.KeyguardUserSwitcher;
 import com.android.systemui.statusbar.policy.NetworkController;
 import com.android.systemui.statusbar.policy.OnHeadsUpChangedListener;
 import com.android.systemui.statusbar.policy.RemoteInputQuickSettingsDisabler;
+import com.android.systemui.statusbar.policy.TelephonyIcons;
 import com.android.systemui.statusbar.policy.UserInfoController;
 import com.android.systemui.statusbar.policy.UserInfoControllerImpl;
 import com.android.systemui.statusbar.policy.UserSwitcherController;
@@ -343,6 +344,8 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     /** If true, the lockscreen will show a distinct wallpaper */
     public static final boolean ENABLE_LOCKSCREEN_WALLPAPER = true;
+
+    public static boolean USE_OLD_MOBILETYPE = false;
 
     static {
         boolean onlyCoreApps;
@@ -1127,7 +1130,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         boolean enoughBlurData = (QSBlurAlpha > 0 && QSBlurIntensity > 0);
 
         if (enoughBlurData && !blurperformed && !mIsKeyguard && isQSBlurEnabled()) {
-            Bitmap bittemp = ImageUtilities.blurImage(mContext, 
+            Bitmap bittemp = ImageUtilities.blurImage(mContext,
                                 ImageUtilities.screenshotSurface(mContext), QSBlurIntensity);
             Drawable blurbackground = new BitmapDrawable(mContext.getResources(), bittemp);
             blurperformed = true;
@@ -1882,7 +1885,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             });
         }
     }
-	
+
 	public void updateBrightnessSliderOverlay() {
         boolean UnexpandedQSBrightnessSlider = Settings.System.getIntForUser(mContext.getContentResolver(),
                         Settings.System.BRIGHTNESS_SLIDER_QS_UNEXPANDED, 0, UserHandle.USER_CURRENT) == 1;
@@ -4977,6 +4980,9 @@ public class StatusBar extends SystemUI implements DemoMode,
 			resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_BLUR_INTENSITY),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.USE_OLD_MOBILETYPE),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5006,6 +5012,9 @@ public class StatusBar extends SystemUI implements DemoMode,
 			} else if (uri.equals(Settings.System.getUriFor(Settings.System.QS_BLUR_ALPHA)) ||
                     uri.equals(Settings.System.getUriFor(Settings.System.QS_BLUR_INTENSITY))) {
                 updateBlurVisibility();
+            } else if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.USE_OLD_MOBILETYPE))) {
+                setOldMobileType();
             }
 			update();
         }
@@ -5017,11 +5026,19 @@ public class StatusBar extends SystemUI implements DemoMode,
             updateKeyguardStatusSettings();
             updateChargingAnimation();
             updateKeyguardStatusSettings();
+            setOldMobileType();
         }
     }
 
     private void updateKeyguardStatusSettings() {
         mNotificationPanel.updateKeyguardStatusSettings();
+    }
+
+    private void setOldMobileType() {
+        USE_OLD_MOBILETYPE = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.USE_OLD_MOBILETYPE, 0,
+                UserHandle.USER_CURRENT) != 0;
+        TelephonyIcons.updateIcons(USE_OLD_MOBILETYPE);
     }
 
     private void setQsRowsColumns() {
