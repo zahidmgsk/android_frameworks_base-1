@@ -228,4 +228,9 @@
 	
 	<!-- Clipboard force notify packages -->
     <java-symbol type="array" name="config_notifyClipboardPackages" />
+
+    <!-- Powermenu animations -->
+    <java-symbol type="style" name="GlobalActionsAnimation" />
+    <java-symbol type="style" name="GlobalActionsAnimationTop" />
+    <java-symbol type="style" name="GlobalActionsAnimationEnter" />
 </resources>
