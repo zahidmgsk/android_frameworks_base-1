@@ -328,4 +328,7 @@
     <!-- Whether to turn on the notification light when the state of the front camera changes -->
     <bool name="config_popUpNotificationLight">false</bool>
 
+    <!-- Smart charging battery percentage -->
+    <integer name="config_smartChargingBatteryLevel">80</integer>
+
 </resources>

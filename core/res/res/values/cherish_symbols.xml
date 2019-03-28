@@ -152,4 +152,7 @@
     <java-symbol type="color" name="gradient_start" />
     <java-symbol type="color" name="gradient_end" />
 
+   <!-- Smart charging battery percentage -->
+    <java-symbol type="integer" name="config_smartChargingBatteryLevel" />
+
 </resources>
