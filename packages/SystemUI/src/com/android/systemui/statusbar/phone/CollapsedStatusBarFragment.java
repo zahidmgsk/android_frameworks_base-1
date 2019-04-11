@@ -81,6 +81,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 	
 	 private View mCustomCarrierLabel;
     private int mShowCarrierLabel;
+    private boolean mHasCarrierLabel;
 
     private View mBatteryBars[] = new View[2];
 
@@ -459,6 +460,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 		mShowCarrierLabel = Settings.System.getIntForUser(resolver,
                 Settings.System.STATUS_BAR_SHOW_CARRIER, 1,
                 UserHandle.USER_CURRENT);
+        mHasCarrierLabel = (mShowCarrierLabel == 2 || mShowCarrierLabel == 3);
         setCarrierLabel(animate);
         if (!mShowClock) {
             mClockStyle = 1; // internally switch to centered clock layout because
@@ -482,7 +484,7 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     }
 	
 	private void setCarrierLabel(boolean animate) {
-        if (mShowCarrierLabel == 2 || mShowCarrierLabel == 3) {
+        if (mHasCarrierLabel) {
             animateShow(mCustomCarrierLabel, animate);
         } else {
             animateHiddenState(mCustomCarrierLabel, View.GONE, animate);
