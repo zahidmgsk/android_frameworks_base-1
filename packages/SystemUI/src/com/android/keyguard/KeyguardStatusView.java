@@ -84,6 +84,11 @@ public class KeyguardStatusView extends GridLayout implements
     private boolean mShowingHeader;
 
     private int mClockSelection;
+    private int mDateSelection;
+
+    // Date styles paddings
+    private int mDateVerPadding;
+    private int mDateHorPadding;
 
     private KeyguardUpdateMonitorCallback mInfoCallback = new KeyguardUpdateMonitorCallback() {
 
@@ -122,6 +127,7 @@ public class KeyguardStatusView extends GridLayout implements
             refreshFormat();
             updateOwnerInfo();
             updateLogoutView();
+            updateDateStyles();
         }
 
         @Override
@@ -203,6 +209,7 @@ public class KeyguardStatusView extends GridLayout implements
         mKeyguardSlice = findViewById(R.id.keyguard_status_area);
         mTextColor = mClockView.getCurrentTextColor();
 
+        updateDateStyles();
         mKeyguardSlice.setContentChangeListener(this::onSliceContentChanged);
         onSliceContentChanged();
 
@@ -310,6 +317,35 @@ public class KeyguardStatusView extends GridLayout implements
         return mLogoutView.getVisibility() == VISIBLE ? mLogoutView.getHeight() : 0;
     }
 
+    private void updateDateStyles() {
+        final ContentResolver resolver = getContext().getContentResolver();
+
+        mDateSelection = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.LOCKSCREEN_DATE_SELECTION, 0, UserHandle.USER_CURRENT);
+
+        switch (mDateSelection) {
+            case 0: // default
+            default:
+                mKeyguardSlice.setViewBackgroundResource(0);
+                mDateVerPadding = 0;
+                mDateHorPadding = 0;
+                mKeyguardSlice.setViewPadding(mDateHorPadding,mDateVerPadding,mDateHorPadding,mDateVerPadding);
+                break;
+            case 1: // semi-transparent box
+                mKeyguardSlice.setViewBackground(getResources().getDrawable(R.drawable.date_box_str_border));
+                mDateHorPadding = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.widget_date_box_padding_hor),getResources().getDisplayMetrics()));
+                mDateVerPadding = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.widget_date_box_padding_ver),getResources().getDisplayMetrics()));
+                mKeyguardSlice.setViewPadding(mDateHorPadding,mDateVerPadding,mDateHorPadding,mDateVerPadding);
+                break;
+            case 2: // semi-transparent box (round)
+                mKeyguardSlice.setViewBackground(getResources().getDrawable(R.drawable.date_str_border));
+                mDateHorPadding = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.widget_date_box_padding_hor),getResources().getDisplayMetrics()));
+                mDateVerPadding = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, getResources().getDimensionPixelSize(R.dimen.widget_date_box_padding_ver),getResources().getDisplayMetrics()));
+                mKeyguardSlice.setViewPadding(mDateHorPadding,mDateVerPadding,mDateHorPadding,mDateVerPadding);
+                break;
+        }
+    }
+
     public float getClockTextSize() {
         return mClockView.getTextSize();
     }
@@ -403,39 +439,7 @@ public class KeyguardStatusView extends GridLayout implements
         if (mClockSelection == 5 || mClockSelection == 6
                 || mClockSelection == 7 || mClockSelection == 8)
             mDefaultClockView.setLineSpacing(0, 0.8f);
-
-        switch (mClockSelection) {
-            case 1: // hidden
-                mClockView.setVisibility(View.GONE);
-                break;
-            case 2: // default
-                mClockView.setVisibility(View.VISIBLE);
-                break;
-            case 3: // default (bold)
-                mClockView.setVisibility(View.VISIBLE);
-                break;
-            case 4: // default (accent)
-                mClockView.setVisibility(View.VISIBLE);
-                break;
-            case 5: // default (accent hr)
-                mClockView.setVisibility(View.VISIBLE);
-                break;
-            case 6: // default (accent min)
-                mClockView.setVisibility(View.VISIBLE);
-                break;
-            case 7: // sammy
-                mClockView.setVisibility(View.VISIBLE);
-                break;
-            case 8: // sammy (bold)
-                mClockView.setVisibility(View.VISIBLE);
-                break;
-            case 9: // sammy (accent)
-                mClockView.setVisibility(View.VISIBLE);
-                break;
-            case 10: // sammy (accent alt)
-                mClockView.setVisibility(View.VISIBLE);
-                break;
-        }
+        updateDateStyles();
     }
 
     public void updateAll() {
