@@ -8,5 +8,7 @@
     <color name="edge_light_green">#3aa853</color>
     <color name="edge_light_red">#ea4234</color>
     <color name="edge_light_yellow">#fbbc06</color>
+  
+    <color name="accent_device_default_light">@*android:color/accent_device_default_light</color>
 </resources>
 
