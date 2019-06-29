@@ -45,4 +45,10 @@
     <string name="animation_random">Ngẫu nhiên</string>
     <string name="action_null">Trống</string>
     <string name="animation_ethans">Ethans</string>
+    <!-- Gaming mode -->
+    <string name="notification_channel_gaming">Chế độ chơi game</string>
+    <string name="gaming_mode_notification_title">Chế độ chơi game đã bật</string>
+    <string name="gaming_mode_notification_content">Chạm vào để tắt chế độ chơi gmae</string>
+    <string name="gaming_mode_enabled_toast">Chế độ chơi game đã bật</string>
+    <string name="gaming_mode_disabled_toast">Chế độ chơi game đã tắt</string>
 </resources>

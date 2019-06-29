@@ -39,6 +39,7 @@ import com.android.systemui.qs.tiles.ColorInversionTile;
 import com.android.systemui.qs.tiles.DataSaverTile;
 import com.android.systemui.qs.tiles.DndTile;
 import com.android.systemui.qs.tiles.FlashlightTile;
+import com.android.systemui.qs.tiles.GamingModeTile;
 import com.android.systemui.qs.tiles.HeadsUpTile;
 import com.android.systemui.qs.tiles.HotspotTile;
 import com.android.systemui.qs.tiles.IntentTile;
@@ -98,6 +99,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<ReadingModeTile> mReadingModeTileProvider;
     private final Provider<PowerShareTile> mPowerShareTileProvider;
     private final Provider<AODTile> mAODTileProvider;
+    private final Provider<GamingModeTile> mGamingModeTileProvider;
 
     private QSTileHost mHost;
 
@@ -131,7 +133,8 @@ public class QSFactoryImpl implements QSFactory {
             Provider<LiveDisplayTile> liveDisplayTileProvider,
             Provider<ReadingModeTile> readingModeTileProvider,
             Provider<PowerShareTile> powerShareTileProvider,
-            Provider<AODTile> aodTileProvider) {
+            Provider<AODTile> aodTileProvider,
+            Provider<GamingModeTile> gamingModeTileProvider) {
         mWifiTileProvider = wifiTileProvider;
         mBluetoothTileProvider = bluetoothTileProvider;
         mCellularTileProvider = cellularTileProvider;
@@ -162,6 +165,7 @@ public class QSFactoryImpl implements QSFactory {
         mReadingModeTileProvider = readingModeTileProvider;
         mPowerShareTileProvider = powerShareTileProvider;
         mAODTileProvider = aodTileProvider;
+        mGamingModeTileProvider = gamingModeTileProvider;
     }
 
     public void setHost(QSTileHost host) {
@@ -238,6 +242,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mPowerShareTileProvider.get();
             case "aod":
                 return mAODTileProvider.get();
+            case "gaming":
+                return mGamingModeTileProvider.get();
         }
 
         // Intent tiles.
