@@ -78,6 +78,8 @@ public class NotificationInterruptionStateProvider {
 
     private boolean mSkipHeadsUp;
 
+    private boolean mLessBoringHeadsUp;
+
     @Inject
     public NotificationInterruptionStateProvider(Context context, NotificationFilter filter,
             StatusBarStateController stateController, BatteryController batteryController) {
@@ -362,6 +364,18 @@ public class NotificationInterruptionStateProvider {
         mSkipHeadsUp = skipHeadsUp;
     }
 
+    public void setUseLessBoringHeadsUp(boolean lessBoring) {
+        mLessBoringHeadsUp = lessBoring;
+    }
+
+    public boolean shouldSkipHeadsUp(StatusBarNotification sbn) {
+        boolean isImportantHeadsUp = false;
+        String notificationPackageName = sbn.getPackageName().toLowerCase();
+        isImportantHeadsUp = notificationPackageName.contains("dialer") ||
+                notificationPackageName.contains("messaging");
+        return !getShadeController().isDozing() && mLessBoringHeadsUp && !isImportantHeadsUp;
+    }
+
     /**
      * Common checks between alerts that occur while the device is awake (heads up & bubbles).
      *
@@ -372,9 +386,9 @@ public class NotificationInterruptionStateProvider {
     public boolean canAlertAwakeCommon(NotificationEntry entry) {
         StatusBarNotification sbn = entry.notification;
 
-        if (mPresenter.isDeviceInVrMode()) {
+        if (mPresenter.isDeviceInVrMode() || shouldSkipHeadsUp(sbn)) {
             if (DEBUG_HEADS_UP) {
-                Log.d(TAG, "No alerting: no huns or vr or gaming mode");
+                Log.d(TAG, "No alerting: no huns or vr or gaming mode or less boring headsup enabled");
             }
             return false;
         }
