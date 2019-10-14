@@ -38,6 +38,7 @@ import android.os.SystemProperties;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.os.UserHandle;
+import android.util.DisplayMetrics;
 import android.view.InputDevice;
 import android.view.IWindowManager;
 import android.view.KeyCharacterMap;
