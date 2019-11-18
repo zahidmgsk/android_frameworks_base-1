@@ -782,8 +782,8 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         createAndAddWindows(result);
 
-        mSbSettingsObserver.observe();
-        mSbSettingsObserver.update();
+        mCherishSettingsObserver.observe();
+        mCherishSettingsObserver.update();
 
         if (mWallpaperSupported) {
             // Make sure we always have the most current wallpaper info.
@@ -4919,9 +4919,9 @@ public class StatusBar extends SystemUI implements DemoMode,
         return mGutsManager;
     }
 
-    private SbSettingsObserver mSbSettingsObserver = new SbSettingsObserver(mHandler);
-    private class SbSettingsObserver extends ContentObserver {
-        SbSettingsObserver(Handler handler) {
+    private CherishSettingsObserver mCherishSettingsObserver = new CherishSettingsObserver(mHandler);
+    private class CherishSettingsObserver extends ContentObserver {
+        CherishSettingsObserver(Handler handler) {
             super(handler);
         }
 
@@ -4948,6 +4948,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_TILE_TITLE_VISIBILITY),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.Secure.getUriFor(
+                    Settings.Secure.SHOW_BACK_ARROW_GESTURE),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -4971,6 +4974,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         public void update() {
             updateCutoutOverlay();
             setQsRowsColumns();
+            setHideArrowForBackGesture();
         }
     }
 
@@ -4978,6 +4982,12 @@ public class StatusBar extends SystemUI implements DemoMode,
         if (mQSPanel != null) {
             mQSPanel.updateResources();
             updateQsPanelResources();
+        }
+    }
+
+    private void setHideArrowForBackGesture() {
+        if (getNavigationBarView() != null) {
+            getNavigationBarView().updateBackArrowForGesture();
         }
     }
 
