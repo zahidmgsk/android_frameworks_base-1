@@ -61,10 +61,10 @@
     <color name="notification_channel_dialog_separator">@color/GM2_grey_700</color>
 
     <!-- The color of the background in the top part of QSCustomizer -->
-    <color name="qs_customize_background">@color/GM2_grey_900</color>
+    <color name="qs_customize_background">@android:color/black</color>
 
     <!-- The color of the background in the bottom part of QSCustomizer -->
-    <color name="qs_customize_decoration">@color/GM2_grey_800</color>
+    <color name="qs_customize_decoration">@color/qs_customize_background</color>
 
     <!-- The color of the background in the separated list of the Global Actions menu -->
     <color name="global_actions_separated_background">@color/GM2_grey_900</color>
@@ -91,4 +91,9 @@
     <color name="ringer_bcg_normal">@color/volume_background_tint</color>
 
     <color name="ringer_icon_mute">@android:color/white</color>
+	
+    <color name="qs_tile_background_color_disabled">#1f1f1f</color>
+	
+    <color name="qs_drag_handle_color">#66555555</color>
+
 </resources>
