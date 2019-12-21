@@ -12,6 +12,9 @@
     <!-- Button to restart the device into fastboot mode, within the Restart Options dialog -->
     <string name="global_action_restart_fastboot">Fastbootd</string>
 
+    <!-- Restart SystemUI via Advanced Power Menu -->
+    <string name="global_action_restart_systemui">SystemUI</string>
+
     <!-- Label for current user in power menu options dialog -->
     <string name="global_action_current_user">Current</string>
 
