@@ -44,6 +44,12 @@ LOCAL_REQUIRED_MODULES := \
 	AccentColorStarbucksOverlay \
 	AccentColorXboxOverlay \
 	AccentColorXiaomiOverlay \
+	AccentColorUbuntuOverlay \
+	AccentColorMatrixOverlay \
+	AccentColorSalmonOverlay \
+	AccentColorMetallicGoldOverlay \
+	AccentColorInfernoRedOverlay \
+	AccentColorDorsetGoldOverlay \
 	DisplayCutoutEmulationCornerOverlay \
 	DisplayCutoutEmulationDoubleOverlay \
 	DisplayCutoutEmulationTallOverlay \
