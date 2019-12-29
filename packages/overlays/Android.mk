@@ -30,6 +30,7 @@ LOCAL_REQUIRED_MODULES := \
 	FontAmaranteSourceOverlay \
 	FontBariolSourceOverlay \
 	FontCagliostroSourceOverlay \
+	FontComicSansSourceOverlay \
 	FontCoolstorySourceOverlay \
 	FontLGSmartGothicSourceOverlay \
 	FontRosemarySourceOverlay \
