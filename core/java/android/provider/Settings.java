@@ -5555,6 +5555,15 @@ public final class Settings {
          * @hide
          */
         public static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+		
+		/**
+         * Whether or not to hide the battery icon and % from QS header
+         * {@hide}
+         */
+        public static final String QS_HIDE_BATTERY = "qs_hide_battery";
+        /** {@hide} */
+        private static final Validator QS_HIDE_BATTERY_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Display style of the battery information in the quick status bar header
@@ -6787,6 +6796,7 @@ public final class Settings {
             DISPLAY_COLOR_MODE,
             ALARM_ALERT,
             NOTIFICATION_LIGHT_PULSE,
+			 QS_HIDE_BATTERY,
             BACK_GESTURE_HEIGHT,
             LOCKSCREEN_BATTERY_INFO,
             QS_PANEL_BG_USE_NEW_TINT,
@@ -7443,6 +7453,7 @@ public final class Settings {
             VALIDATORS.put(CHARGING_ANIMATION, CHARGING_ANIMATION_VALIDATOR);
             VALIDATORS.put(CENTER_NOTIFICATION_HEADERS, CENTER_NOTIFICATION_HEADERS_VALIDATOR);
 			VALIDATORS.put(QS_DATAUSAGE, QS_DATAUSAGE_VALIDATOR);
+			VALIDATORS.put(QS_HIDE_BATTERY, QS_HIDE_BATTERY_VALIDATOR);
         }
 
         /**

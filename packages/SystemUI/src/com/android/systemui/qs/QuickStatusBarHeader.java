@@ -139,6 +139,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
     private Clock mClockView;
     private DateView mDateView;
     private BatteryMeterView mBatteryMeterView;
+	private boolean isHideBattIcon;
 	
 	// omni additions start
     private boolean mLandscape;
@@ -171,6 +172,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
                     this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.QS_DATAUSAGE), false,
+                    this, UserHandle.USER_ALL);
+			resolver.registerContentObserver(Settings.System
+                    .getUriFor(Settings.System.QS_HIDE_BATTERY), false,
                     this, UserHandle.USER_ALL);
             }
 
@@ -416,6 +420,9 @@ public class QuickStatusBarHeader extends RelativeLayout implements
 		mHeaderImageEnabled = Settings.System.getIntForUser(getContext().getContentResolver(),
                 Settings.System.STATUS_BAR_CUSTOM_HEADER, 0,
                 UserHandle.USER_CURRENT) == 1;
+		isHideBattIcon = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.QS_HIDE_BATTERY, 0,
+                UserHandle.USER_CURRENT) == 1;
         updateResources();
         updateStatusbarProperties();
         updateHeaderImage();
@@ -443,6 +450,7 @@ public class QuickStatusBarHeader extends RelativeLayout implements
         }
         mBatteryMeterView.updatePercentView();
         mBatteryMeterView.updateVisibility();
+		mBatteryMeterView.setVisibility(isHideBattIcon ? View.GONE : View.VISIBLE);
     }
 
     private void updateSBBatteryStyle() {
