@@ -752,6 +752,8 @@ public final class DisconnectCause {
             return "HO_NOT_FEASIBLE";
         case NON_SELECTED_USER_CLEARING:
             return "NON_SELECTED_USER_CLEARING";
+            case INCOMING_AUTO_REJECTED:
+                return "INCOMING_AUTO_REJECTED";
         default:
             return "INVALID: " + cause;
         }
