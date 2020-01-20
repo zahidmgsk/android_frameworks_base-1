@@ -112,4 +112,6 @@
     <string name="statusbar_items_title">Biểu tượng thanh trạng thái</string>
     <!-- Alerting notification header label -->
     <string name="notification_section_header_alerting">Thông báo hiện thị</string>
+    <!-- Spidey Analog clock -->
+    <string name="clock_title_spidey" translatable="false">Người nhện</string>
 </resources>
