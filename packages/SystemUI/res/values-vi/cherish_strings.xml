@@ -118,4 +118,6 @@
     <string name="clock_title_spectrum" translatable="false">Quang phổ</string>
     <!-- Dot Analog clock -->
     <string name="clock_title_dot" translatable="false">Chấm</string>
+    <!-- Custom num Analog clock -->
+    <string name="clock_title_custom_num" translatable="false">Tùy chỉnh với số</string>
 </resources>
