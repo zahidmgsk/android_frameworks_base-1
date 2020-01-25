@@ -171,8 +171,8 @@ public class DividedLinesClockController implements ClockPlugin {
     public int getPreferredY(int totalHeight) {
         return totalHeight / 2;
     }
-
-    @Override
+	
+	@Override
     public void setStyle(Style style) {}
 
     @Override
