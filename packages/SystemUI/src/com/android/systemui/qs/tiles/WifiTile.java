@@ -67,7 +67,6 @@ public class WifiTile extends QSTileImpl<SignalState> {
     protected final WifiSignalCallback mSignalCallback = new WifiSignalCallback();
     private final ActivityStarter mActivityStarter;
     private boolean mExpectDisabled;
-
     private final KeyguardMonitor mKeyguard;
     private final KeyguardCallback mKeyguardCallback = new KeyguardCallback();
 
@@ -101,8 +100,10 @@ public class WifiTile extends QSTileImpl<SignalState> {
     public void setDetailListening(boolean listening) {
         if (listening) {
             mWifiController.addAccessPointCallback(mDetailAdapter);
+            mKeyguard.addCallback(mKeyguardCallback);
         } else {
             mWifiController.removeAccessPointCallback(mDetailAdapter);
+            mKeyguard.removeCallback(mKeyguardCallback);
         }
     }
 
