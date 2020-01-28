@@ -143,5 +143,9 @@
 	
 	<!-- Themes -->
     <java-symbol type="color" name="theme_generic_semi_transparent_color" />
+	
+	<!-- Gradients Shit -->
+    <java-symbol type="color" name="gradient_start" />
+    <java-symbol type="color" name="gradient_end" />
 
 </resources>
