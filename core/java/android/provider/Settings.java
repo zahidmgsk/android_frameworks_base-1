@@ -5630,6 +5630,14 @@ public final class Settings {
         public static final String QS_BLUR = "qs_blur";
         /** @hide */
         private static final Validator QS_BLUR_VALIDATOR = BOOLEAN_VALIDATOR;
+		
+		/**
+         * QS blur alpha
+         * @hide
+         */
+        public static final String QS_BLUR_ALPHA = "qs_blur_alpha";
+        /** @hide */
+        private static final Validator QS_BLUR_ALPHA_VALIDATOR = ANY_INTEGER_VALIDATOR;
 
         /**
          * whether to enable or disable vibration on succesful fingerprint auth
@@ -5718,6 +5726,8 @@ public final class Settings {
             STATUSBAR_CLOCK_DATE_POSITION,
             VOLTE_ICON_STYLE,
             FINGERPRINT_SUCCESS_VIB,
+	         QS_BLUR,
+            QS_BLUR_ALPHA,
         };
 
         /**
@@ -6120,6 +6130,8 @@ public final class Settings {
             VALIDATORS.put(STATUSBAR_CLOCK_DATE_POSITION, STATUSBAR_CLOCK_DATE_POSITION_VALIDATOR);
 			 VALIDATORS.put(VOLTE_ICON_STYLE, VOLTE_ICON_STYLE_VALIDATOR);
             VALIDATORS.put(FINGERPRINT_SUCCESS_VIB, FINGERPRINT_SUCCESS_VIB_VALIDATOR);
+	         VALIDATORS.put(QS_BLUR, QS_BLUR_VALIDATOR);
+            VALIDATORS.put(QS_BLUR_ALPHA, QS_BLUR_ALPHA_VALIDATOR);
         }
 
         /**
