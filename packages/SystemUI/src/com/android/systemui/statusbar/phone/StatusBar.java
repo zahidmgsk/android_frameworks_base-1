@@ -1,17 +1,15 @@
-/*
- * Copyright (C) 2010 The Android Open Source Project
+﻿/*
+ * Copyright (C) 2016 The Android Open Source Project
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+ * except in compliance with the License. You may obtain a copy of the License at
  *
  *      http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * Unless required by applicable law or agreed to in writing, software distributed under the
+ * License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
  */
 
 package com.android.systemui.statusbar.phone;
@@ -71,6 +69,11 @@ import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.hardware.display.DisplayManager;
+import android.graphics.drawable.GradientDrawable;
 import android.content.IntentFilter;
 import android.content.om.IOverlayManager;
 import android.content.pm.IPackageManager;
@@ -612,6 +615,8 @@ public class StatusBar extends SystemUI implements DemoMode,
             (SysuiStatusBarStateController) Dependency.get(StatusBarStateController.class);
 
     private boolean mDisplayCutoutHidden;
+
+    private boolean mUnexpandedQSBrightnessSlider;
 
     private final KeyguardUpdateMonitorCallback mUpdateCallback =
             new KeyguardUpdateMonitorCallback() {
@@ -1825,6 +1830,23 @@ public class StatusBar extends SystemUI implements DemoMode,
                 try {
                     mOverlayManager.setEnabled("org.pixelexperience.overlay.hidecutout",
                                 mDisplayCutoutHidden, mLockscreenUserManager.getCurrentUserId());
+                } catch (RemoteException ignored) {
+                }
+            });
+        }
+    }
+	
+	public void updateBrightnessSliderOverlay() {
+        boolean UnexpandedQSBrightnessSlider = Settings.System.getIntForUser(mContext.getContentResolver(),
+                        Settings.System.BRIGHTNESS_SLIDER_QS_UNEXPANDED, 0, UserHandle.USER_CURRENT) == 1;
+        if (mUnexpandedQSBrightnessSlider != UnexpandedQSBrightnessSlider){
+            mUnexpandedQSBrightnessSlider = UnexpandedQSBrightnessSlider;
+            mUiOffloadThread.submit(() -> {
+                final IOverlayManager mOverlayManager = IOverlayManager.Stub.asInterface(
+                                ServiceManager.getService(Context.OVERLAY_SERVICE));
+                try {
+                    mOverlayManager.setEnabled("com.extendedui.overlay.brightnessslider",
+                                mUnexpandedQSBrightnessSlider, mLockscreenUserManager.getCurrentUserId());
                 } catch (RemoteException ignored) {
                 }
             });
@@ -4868,6 +4890,9 @@ public class StatusBar extends SystemUI implements DemoMode,
 			 resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_PANEL_BG_USE_NEW_TINT),
                     false, this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.BRIGHTNESS_SLIDER_QS_UNEXPANDED),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -4887,6 +4912,8 @@ public class StatusBar extends SystemUI implements DemoMode,
                 updateQsPanelResources();
 			} else if (uri.equals(Settings.System.getUriFor(Settings.System.QS_PANEL_BG_USE_NEW_TINT))) {
                 mQSPanel.getHost().reloadAllTiles();
+            } else if (uri.equals(Settings.System.getUriFor(Settings.System.BRIGHTNESS_SLIDER_QS_UNEXPANDED))) {
+                updateBrightnessSliderOverlay();
             }
 			update();
         }
