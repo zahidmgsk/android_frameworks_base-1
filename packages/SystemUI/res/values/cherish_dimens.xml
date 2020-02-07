@@ -83,4 +83,7 @@
     <dimen name="qs_header_image_side_margin">8dp</dimen>
     <dimen name="qs_header_image_bottom_margin">0dp</dimen>
 
+    <!-- Padding after battery level text in status bar, QS, and Keyguard -->
+    <dimen name="battery_level_padding_end">2dp</dimen>
+
 </resources>
