@@ -6725,6 +6725,11 @@ public final class Settings {
          * @hide
          */
         public static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
+		
+        /**
+         * @hide
+         */
+        public static final String AUTO_BRIGHTNESS_MIN_VALUE = "auto_brightness_min_value";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
