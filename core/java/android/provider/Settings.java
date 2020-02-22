@@ -6383,6 +6383,15 @@ public final class Settings {
         private static final Validator BACK_GESTURE_BLOCK_IME_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
+         * Whether to vibrate for back gesture
+         * @hide
+         */
+        public static final String BACK_GESTURE_HAPTIC = "back_gesture_haptic";
+
+        /** @hide */
+        private static final Validator BACK_GESTURE_HAPTIC_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -6507,6 +6516,7 @@ public final class Settings {
             THEMING_SETTINGS_DASHBOARD_ICONS,
             NAVIGATION_HANDLE_WIDTH,
             BACK_GESTURE_BLOCK_IME,
+            BACK_GESTURE_HAPTIC,
         };
 
         /**
@@ -6767,6 +6777,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(FOD_GESTURE);
             PRIVATE_SETTINGS.add(NAVIGATION_HANDLE_WIDTH);
             PRIVATE_SETTINGS.add(BACK_GESTURE_BLOCK_IME);
+            PRIVATE_SETTINGS.add(BACK_GESTURE_HAPTIC);
         }
 
         /**
@@ -7009,6 +7020,7 @@ public final class Settings {
             VALIDATORS.put(FOD_GESTURE, FOD_GESTURE_VALIDATOR);
             VALIDATORS.put(NAVIGATION_HANDLE_WIDTH, NAVIGATION_HANDLE_WIDTH_VALIDATOR);
             VALIDATORS.put(BACK_GESTURE_BLOCK_IME, BACK_GESTURE_BLOCK_IME_VALIDATOR);
+            VALIDATORS.put(BACK_GESTURE_HAPTIC, BACK_GESTURE_HAPTIC_VALIDATOR);
         }
 
         /**

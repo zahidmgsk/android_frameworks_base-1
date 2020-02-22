@@ -279,6 +279,12 @@ public class EdgeBackGestureHandler implements DisplayListener, TunerService.Tun
 		mBlockImeSpace = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.BACK_GESTURE_BLOCK_IME, 1, UserHandle.USER_CURRENT) == 1;
     }
+	
+	public void setStateForBackGestureHaptic() {
+        if (mEdgePanel != null) {
+            mEdgePanel.setBackGestureHaptic();
+        }
+    }
 
     private void disposeInputChannel() {
         if (mInputEventReceiver != null) {
