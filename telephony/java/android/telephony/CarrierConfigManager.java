@@ -3899,6 +3899,16 @@ public class CarrierConfigManager {
     public static final String KEY_MISSED_INCOMING_CALL_SMS_ORIGINATOR_STRING_ARRAY =
             "missed_incoming_call_sms_originator_string_array";
 
+     /**
+     * Flag indicating whether carrier supports multianchor conference.
+     * In multianchor conference, a participant of a conference can add
+     * other participants to the call using merge button thereby resulting
+     * in a conference with multi anchors.
+     * @hide
+     */
+    public static final String KEY_CARRIER_SUPPORTS_MULTIANCHOR_CONFERENCE =
+            "carrier_supports_multianchor_conference";
+
 
     /**
      * String array of Apn Type configurations.
@@ -4534,6 +4544,7 @@ public class CarrierConfigManager {
         sDefaults.putBoolean(KEY_REQUIRE_APN_FILTERING_WITH_RADIO_CAPABILITY, false);
         sDefaults.putString(KEY_EMERGENCY_NOTIFICATION_SUMMARY_STRING, "");
         sDefaults.putString(KEY_EMERGENCY_NOTIFICATION_TITLE_STRING, "");
+        sDefaults.putBoolean(KEY_CARRIER_SUPPORTS_MULTIANCHOR_CONFERENCE, false);
     }
 
     /**
