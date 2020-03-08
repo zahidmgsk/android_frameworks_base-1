@@ -522,7 +522,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     protected NotificationRemoteInputManager mRemoteInputManager;
     private boolean mWallpaperSupported;
 
-    private boolean mChargingAnimation;
+    private int mChargingAnimation = 1;
 
     private boolean mWallpaperSupportsAmbientMode;
     private final BroadcastReceiver mWallpaperChangedReceiver = new BroadcastReceiver() {
@@ -972,6 +972,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 SystemUIFactory.getInstance().createKeyguardIndicationController(mContext,
                         mStatusBarWindow.findViewById(R.id.keyguard_indication_area),
                         mStatusBarWindow.findViewById(R.id.lock_icon));
+        mKeyguardIndicationController.updateChargingIndication(mChargingAnimation);
         mNotificationPanel.setKeyguardIndicationController(mKeyguardIndicationController);
 
         mAmbientIndicationContainer = mStatusBarWindow.findViewById(
@@ -4587,7 +4588,7 @@ public class StatusBar extends SystemUI implements DemoMode,
 
     private void updateChargingAnimation() {
         mChargingAnimation = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.LOCKSCREEN_CHARGING_ANIMATION, 0, UserHandle.USER_CURRENT) == 1;
+                Settings.System.LOCKSCREEN_CHARGING_ANIMATION_STYLE, 1, UserHandle.USER_CURRENT);
         if (mKeyguardIndicationController != null) {
             mKeyguardIndicationController.updateChargingIndication(mChargingAnimation);
         }
@@ -4968,7 +4969,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                     Settings.Secure.LOCKSCREEN_DATE_SELECTION),
                     false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.LOCKSCREEN_CHARGING_ANIMATION),
+                    Settings.System.LOCKSCREEN_CHARGING_ANIMATION_STYLE),
                     false, this, UserHandle.USER_ALL);
 			resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_BLUR_ALPHA),
@@ -4997,7 +4998,7 @@ public class StatusBar extends SystemUI implements DemoMode,
                 mQSPanel.getHost().reloadAllTiles();
             } else if (uri.equals(Settings.System.getUriFor(Settings.System.BRIGHTNESS_SLIDER_QS_UNEXPANDED))) {
                 updateBrightnessSliderOverlay();
-            } else if (uri.equals(Settings.System.getUriFor(Settings.System.LOCKSCREEN_CHARGING_ANIMATION))) {
+            } else if (uri.equals(Settings.System.getUriFor(Settings.System.LOCKSCREEN_CHARGING_ANIMATION_STYLE))) {
             updateChargingAnimation();
             } else if (uri.equals(Settings.Secure.getUriFor(Settings.Secure.LOCKSCREEN_CLOCK_SELECTION))||
             uri.equals(Settings.Secure.getUriFor(Settings.Secure.LOCKSCREEN_DATE_SELECTION))) {
