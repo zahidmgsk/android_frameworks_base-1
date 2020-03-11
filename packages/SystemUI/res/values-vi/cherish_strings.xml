@@ -160,8 +160,6 @@
     <string name="screenrecorder_title_tile">Quay màn hình</string>
 	<!-- DataSwitch Tile -->
     <string name="qs_data_switch_label">Đổi thẻ SIM dữ liệu</string>
-    <string name="qs_data_switch_toast_0">Hiện tại không có thẻ SIM nào được lắp vào</string>
-    <string name="qs_data_switch_toast_1">Hiện tại chỉ có một thẻ SIM được lắp vào</string>
     <string name="qs_data_switch_changed_1">Sử dụng SIM 1 cho dữ liệu di động</string>
     <string name="qs_data_switch_changed_2">Sử dụng SIM 2 cho dữ liệu di động</string>
 </resources>
