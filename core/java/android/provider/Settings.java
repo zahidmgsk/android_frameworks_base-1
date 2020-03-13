@@ -5598,6 +5598,12 @@ public final class Settings {
          * @hide
          */
         public static final String STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
+		
+		/**
+         * Whether or not to show a bolt icon next to the percentage when charging
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_BOLT_CHARGING = "status_bar_battery_bolt_charging";
 
         /**
          * Whether to show charging animation on lock screen
