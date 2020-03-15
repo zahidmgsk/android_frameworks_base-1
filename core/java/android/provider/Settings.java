@@ -5657,6 +5657,9 @@ public final class Settings {
         /** @hide */
         private static final Validator QS_BLUR_INTENSITY_VALIDATOR = ANY_INTEGER_VALIDATOR;
 
+        private static final Validator LOCKSCREEN_CHARGING_ANIMATION_STYLE_VALIDATOR =
+                new SettingsValidators.InclusiveIntegerRangeValidator(0, 5);
+
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
@@ -5737,6 +5740,7 @@ public final class Settings {
 	         QS_BLUR,
             QS_BLUR_ALPHA,
             QS_BLUR_INTENSITY,
+            LOCKSCREEN_CHARGING_ANIMATION_STYLE,
         };
 
         /**
@@ -6142,6 +6146,7 @@ public final class Settings {
 	         VALIDATORS.put(QS_BLUR, QS_BLUR_VALIDATOR);
             VALIDATORS.put(QS_BLUR_ALPHA, QS_BLUR_ALPHA_VALIDATOR);
             VALIDATORS.put(QS_BLUR_INTENSITY, QS_BLUR_INTENSITY_VALIDATOR);
+            VALIDATORS.put(LOCKSCREEN_CHARGING_ANIMATION_STYLE, LOCKSCREEN_CHARGING_ANIMATION_STYLE_VALIDATOR);
         }
 
         /**
