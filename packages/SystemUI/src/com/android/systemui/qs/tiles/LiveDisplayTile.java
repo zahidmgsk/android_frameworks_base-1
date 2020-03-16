@@ -150,7 +150,7 @@ public class LiveDisplayTile extends QSTileImpl<LiveDisplayState> {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.CUSTOM_SETTINGS;
+        return MetricsEvent.CHERISH_SETTINGS;
     }
 
     @Override

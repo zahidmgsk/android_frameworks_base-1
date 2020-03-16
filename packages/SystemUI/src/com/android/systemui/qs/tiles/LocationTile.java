@@ -199,7 +199,7 @@ public class LocationTile extends QSTileImpl<BooleanState> {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.CUSTOM_SETTINGS;
+        return MetricsEvent.CHERISH_SETTINGS;
     }
 
     @Override
@@ -232,7 +232,7 @@ public class LocationTile extends QSTileImpl<BooleanState> {
 
         @Override
         public int getMetricsCategory() {
-            return MetricsEvent.CUSTOM_SETTINGS;
+            return MetricsEvent.CHERISH_SETTINGS;
         }
 
         @Override
