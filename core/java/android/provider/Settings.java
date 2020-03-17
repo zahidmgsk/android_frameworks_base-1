@@ -5228,13 +5228,6 @@ public final class Settings {
         private static final Validator QS_TILE_TITLE_VISIBILITY_VALIDATOR =
                 BOOLEAN_VALIDATOR;
 
-        /** @hide */
-        public static final String GESTURE_PILL_TOGGLE = "gesture_pill_toggle";
-
-        /** @hide */
-        private static final Validator GESTURE_PILL_TOGGLE_VALIDATOR =
-                BOOLEAN_VALIDATOR;
-
         /**
          * Media artwork wallpaper blur level on lockscreen
          * @hide
@@ -5907,7 +5900,7 @@ public final class Settings {
          * @hide
          */
         public static final String RECENT_PANEL_EXPANDED_MODE = "recent_panel_expanded_mode";
-
+		
         /** @hide */
         private static final Validator RECENT_PANEL_EXPANDED_MODE_VALIDATOR = ANY_INTEGER_VALIDATOR;
 
@@ -6703,7 +6696,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(ANIM_TILE_DURATION);
             PRIVATE_SETTINGS.add(ANIM_TILE_INTERPOLATOR);
             PRIVATE_SETTINGS.add(QS_TILE_TITLE_VISIBILITY);
-            PRIVATE_SETTINGS.add(GESTURE_PILL_TOGGLE);
             PRIVATE_SETTINGS.add(NAV_BAR_COMPACT_LAYOUT);
             PRIVATE_SETTINGS.add(QUICK_SETTINGS_TILES_VIBRATE);
             PRIVATE_SETTINGS.add(DISPLAY_TEMPERATURE_DAY);
@@ -6940,7 +6932,6 @@ public final class Settings {
             VALIDATORS.put(ANIM_TILE_DURATION, ANIM_TILE_DURATION_VALIDATOR);
             VALIDATORS.put(ANIM_TILE_INTERPOLATOR, ANIM_TILE_INTERPOLATOR_VALIDATOR);
             VALIDATORS.put(QS_TILE_TITLE_VISIBILITY, QS_TILE_TITLE_VISIBILITY_VALIDATOR);
-            VALIDATORS.put(GESTURE_PILL_TOGGLE, GESTURE_PILL_TOGGLE_VALIDATOR);
             VALIDATORS.put(NAV_BAR_COMPACT_LAYOUT, NAV_BAR_COMPACT_LAYOUT_VALIDATOR);
             VALIDATORS.put(QUICK_SETTINGS_TILES_VIBRATE, QUICK_SETTINGS_TILES_VIBRATE_VALIDATOR);
             VALIDATORS.put(DISPLAY_TEMPERATURE_DAY, DISPLAY_TEMPERATURE_DAY_VALIDATOR);
