@@ -42,7 +42,6 @@ import com.android.systemui.statusbar.phone.ClockController;
 import com.android.systemui.statusbar.phone.NavigationBarView;
 import com.android.systemui.statusbar.phone.NotificationPanelView;
 import com.android.systemui.statusbar.phone.StatusBarIconController;
-import com.android.systemui.statusbar.phone.StatusBar;
 import com.android.systemui.statusbar.policy.Clock;
 import com.android.systemui.util.leak.LeakDetector;
 
@@ -74,9 +73,7 @@ public class TunerServiceImpl extends TunerService {
             NotificationPanelView.DOUBLE_TAP_SLEEP_GESTURE,
             NotificationPanelView.STATUS_BAR_QUICK_QS_PULLDOWN,
             QSTileHost.TILES_SETTING,
-            Settings.Secure.DOZE_ALWAYS_ON,
-            StatusBar.SCREEN_BRIGHTNESS_MODE,
-            StatusBar.STATUS_BAR_BRIGHTNESS_CONTROL
+            Settings.Secure.DOZE_ALWAYS_ON
     };
 
     private final Observer mObserver = new Observer();
