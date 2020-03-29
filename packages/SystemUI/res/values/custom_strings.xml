@@ -17,7 +17,5 @@
  */
 -->
 <resources>
-
     <string name="statusbar_items_title">Statusbar icons</string>
-
 </resources>

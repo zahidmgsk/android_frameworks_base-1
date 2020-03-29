@@ -5110,49 +5110,6 @@ public final class Settings {
         public static final Validator LOCKSCREEN_DISABLE_POWER_MENU_VALIDATOR = BOOLEAN_VALIDATOR;
 
         /**
-         * Network traffic indicator mode
-         * 0 = Don't show network traffic indicator
-         * 1 = Display up-stream traffic only
-         * 2 = Display down-stream traffic only
-         * 3 = Display both up- and down-stream traffic
-         * @hide
-         */
-        public static final String NETWORK_TRAFFIC_MODE = "network_traffic_mode";
-
-        /** @hide */
-        public static final Validator NETWORK_TRAFFIC_MODE_VALIDATOR =
-                new SettingsValidators.InclusiveIntegerRangeValidator(0, 3);
-
-        /**
-         * Whether or not to hide the network traffic indicator when there is no activity
-         * @hide
-         */
-        public static final String NETWORK_TRAFFIC_AUTOHIDE = "network_traffic_autohide";
-
-        /** @hide */
-        public static final Validator NETWORK_TRAFFIC_AUTOHIDE_VALIDATOR = BOOLEAN_VALIDATOR;
-
-        /**
-         * Measurement unit preference for network traffic
-         * @hide
-         */
-        public static final String NETWORK_TRAFFIC_UNITS = "network_traffic_units";
-
-        /** @hide */
-        public static final Validator NETWORK_TRAFFIC_UNITS_VALIDATOR =
-                new SettingsValidators.InclusiveIntegerRangeValidator(0, 3);
-
-        /**
-         * Whether or not to show measurement units in the network traffic indiciator
-         * @hide
-         */
-        public static final String NETWORK_TRAFFIC_SHOW_UNITS = "network_traffic_show_units";
-
-        /** @hide */
-        public static final Validator NETWORK_TRAFFIC_SHOW_UNITS_VALIDATOR = BOOLEAN_VALIDATOR;
-
-
-        /**
          * Display cutout
          * @hide
          */
@@ -5863,10 +5820,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(INCREASING_RING_RAMP_UP_TIME);
             PRIVATE_SETTINGS.add(SCREENSHOT_SOUND);
             PRIVATE_SETTINGS.add(LOCKSCREEN_DISABLE_POWER_MENU);
-            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_MODE);
-            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_AUTOHIDE);
-            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_UNITS);
-            PRIVATE_SETTINGS.add(NETWORK_TRAFFIC_SHOW_UNITS);
             PRIVATE_SETTINGS.add(DISPLAY_CUTOUT_HIDDEN);
             PRIVATE_SETTINGS.add(FORCE_FULLSCREEN_CUTOUT_APPS);
             PRIVATE_SETTINGS.add(SWIPE_TO_SCREENSHOT);
@@ -6053,10 +6006,6 @@ public final class Settings {
             VALIDATORS.put(INCREASING_RING_RAMP_UP_TIME, INCREASING_RING_RAMP_UP_TIME_VALIDATOR);
             VALIDATORS.put(SCREENSHOT_SOUND, SCREENSHOT_SOUND_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_DISABLE_POWER_MENU, LOCKSCREEN_DISABLE_POWER_MENU_VALIDATOR);
-            VALIDATORS.put(NETWORK_TRAFFIC_MODE, NETWORK_TRAFFIC_MODE_VALIDATOR);
-            VALIDATORS.put(NETWORK_TRAFFIC_AUTOHIDE, NETWORK_TRAFFIC_AUTOHIDE_VALIDATOR);
-            VALIDATORS.put(NETWORK_TRAFFIC_UNITS, NETWORK_TRAFFIC_UNITS_VALIDATOR);
-            VALIDATORS.put(NETWORK_TRAFFIC_SHOW_UNITS, NETWORK_TRAFFIC_SHOW_UNITS_VALIDATOR);
             VALIDATORS.put(DISPLAY_CUTOUT_HIDDEN, DISPLAY_CUTOUT_HIDDEN_VALIDATOR);
             VALIDATORS.put(FORCE_FULLSCREEN_CUTOUT_APPS, FORCE_FULLSCREEN_CUTOUT_APPS_VALIDATOR);
             VALIDATORS.put(SWIPE_TO_SCREENSHOT, SWIPE_TO_SCREENSHOT_VALIDATOR);
