@@ -46,7 +46,6 @@ import android.widget.TextView;
 
 import android.provider.Settings;
 
-import com.android.internal.util.custom.cutout.CutoutUtils;
 import com.android.systemui.R;
 
 import java.util.HashMap;
@@ -334,9 +333,6 @@ public class NetworkTraffic extends TextView {
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.NETWORK_TRAFFIC_SHOW_UNITS),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.DISPLAY_CUTOUT_HIDDEN),
-                    false, this, UserHandle.USER_ALL);
         }
 
         void unobserve() {
@@ -355,15 +351,11 @@ public class NetworkTraffic extends TextView {
         return cm.getActiveNetworkInfo() != null;
     }
 
-    private boolean isNotchHidden(){
-        return !CutoutUtils.hasCenteredCutout(mContext);
-    }
-
     private void updateSettings() {
         ContentResolver resolver = mContext.getContentResolver();
 
-        mMode = isNotchHidden() ? Settings.System.getIntForUser(resolver,
-                Settings.System.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT) : MODE_DISABLED;
+        mMode = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT);
         mAutoHide = Settings.System.getIntForUser(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT) == 1;
         mUnits = Settings.System.getIntForUser(resolver,
