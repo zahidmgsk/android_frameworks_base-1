@@ -46,9 +46,6 @@
     <!-- Whether notify fingerprint client of successful cancelled authentication -->
     <bool name="config_notifyClientOnFingerprintCancelSuccess">false</bool>
 
-    <!-- Whether to send camera status intent -->
-    <bool name="config_sendCameraStatusIntent">false</bool>
-
     <!-- The list of components which should be automatically disabled for a specific device.
          Note: this MUST not be used to randomly disable components, ask for approval first! -->
     <string-array name="config_deviceDisabledComponents" translatable="false">
@@ -323,5 +320,8 @@
      <!-- Do the battery/notification LEDs support pulsing?
          Used to decide if we show pulse settings -->
     <bool name="config_ledCanPulse">true</bool>
+
+    <!-- Component name of popup camera service -->
+    <string name="config_popUpCameraServiceComponentName" translatable="false"></string>
 
 </resources>
