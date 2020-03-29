@@ -4938,6 +4938,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             updateChargingAnimation();
             } else if (uri.equals(Settings.Secure.getUriFor(Settings.Secure.LOCKSCREEN_CLOCK_SELECTION))||
             uri.equals(Settings.Secure.getUriFor(Settings.Secure.LOCKSCREEN_DATE_SELECTION))) {
+            updateKeyguardStatusSettings();
             }
 			update();
         }
@@ -4948,6 +4949,7 @@ public class StatusBar extends SystemUI implements DemoMode,
             setHideArrowForBackGesture();
             updateKeyguardStatusSettings();
             updateChargingAnimation();
+            updateKeyguardStatusSettings();
         }
     }
 
