@@ -5253,6 +5253,26 @@ public final class Settings {
         /** @hide */
         private static final Validator QUICK_SETTINGS_TILES_VIBRATE_VALIDATOR =
                 BOOLEAN_VALIDATOR;
+				
+		/**
+         * Whether to turn on the notification light when the state of the front camera changes
+         * 0 = 0ff, 1 = on
+         */
+        public static final String POPUP_CAMERA_LED_ENABLED = "popup_camera_led_enabled";
+
+        /** @hide */
+        public static final Validator POPUP_CAMERA_LED_ENABLED_VALIDATOR =
+                BOOLEAN_VALIDATOR;
+
+        /**
+         * Whether battery led is temporarily blocked
+         * 0 = 0ff, 1 = on
+         */
+        public static final String POPUP_CAMERA_BATTERY_LED_BLOCKED = "popup_camera_battery_led_blocked";
+
+        /** @hide */
+        public static final Validator POPUP_CAMERA_BATTERY_LED_BLOCKED_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * IMPORTANT: If you add a new public settings you also have to add it to
@@ -6033,6 +6053,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_MEDIUM_COLOR);
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_FULL_COLOR);
             PRIVATE_SETTINGS.add(BATTERY_LIGHT_REALLYFULL_COLOR);
+            PRIVATE_SETTINGS.add(POPUP_CAMERA_LED_ENABLED);
+            PRIVATE_SETTINGS.add(POPUP_CAMERA_BATTERY_LED_BLOCKED);
         }
 
         /**
@@ -6232,6 +6254,8 @@ public final class Settings {
             VALIDATORS.put(BATTERY_LIGHT_MEDIUM_COLOR, BATTERY_LIGHT_MEDIUM_COLOR_VALIDATOR);
             VALIDATORS.put(BATTERY_LIGHT_FULL_COLOR, BATTERY_LIGHT_FULL_COLOR_VALIDATOR);
             VALIDATORS.put(BATTERY_LIGHT_REALLYFULL_COLOR, BATTERY_LIGHT_REALLYFULL_COLOR_VALIDATOR);
+            VALIDATORS.put(POPUP_CAMERA_LED_ENABLED, POPUP_CAMERA_LED_ENABLED_VALIDATOR);
+            VALIDATORS.put(POPUP_CAMERA_BATTERY_LED_BLOCKED, POPUP_CAMERA_BATTERY_LED_BLOCKED_VALIDATOR);
         }
 
         /**
