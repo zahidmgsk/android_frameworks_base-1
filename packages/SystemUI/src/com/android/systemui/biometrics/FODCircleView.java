@@ -95,6 +95,7 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
     private Timer mBurnInProtectionTimer;
 
     private FODAnimation mFODAnimation;
+    private boolean mIsRecognizingAnimEnabled;
 
     private FodScreenOffHandler mFodScreenOffHandler;
 
@@ -133,6 +134,8 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
         public void onKeyguardVisibilityChanged(boolean showing) {
             mIsKeyguard = showing;
             updatePosition();
+            updateSettings();
+
             if (mFODAnimation != null) {
                 mFODAnimation.setAnimationKeyguard(showing);
             }
@@ -302,6 +305,7 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
 
         mWindowManager.addView(this, mParams);
 
+        updateSettings();
         updatePosition();
         hide();
 
@@ -330,7 +334,9 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
 
         if (event.getAction() == MotionEvent.ACTION_DOWN && newIsInside) {
             showCircle();
-            mHandler.post(() -> mFODAnimation.showFODanimation());
+            if (mIsRecognizingAnimEnabled) {
+                mHandler.post(() -> mFODAnimation.showFODanimation());
+            }
             return true;
         } else if (event.getAction() == MotionEvent.ACTION_UP) {
             hideCircle();
@@ -346,6 +352,7 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
+        updateSettings();
         updatePosition();
     }
 
@@ -541,6 +548,11 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
         }
 
         mWindowManager.updateViewLayout(this, mParams);
+    }
+
+    private void updateSettings() {
+        mIsRecognizingAnimEnabled = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.FOD_RECOGNIZING_ANIMATION, 1) != 0;
     }
 
     private class BurnInProtectionTask extends TimerTask {
