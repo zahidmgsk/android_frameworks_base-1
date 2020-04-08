@@ -130,5 +130,8 @@
     <string name="show_fourg_summary">Replaces LTE statusbar indicators with 4G</string>
 	
  <string name="statusbar_items_title">Statusbar icons</string>
+
+     <!-- Alerting notification header label -->
+    <string name="notification_section_header_alerting">Alerting notifications</string>
  
 </resources>

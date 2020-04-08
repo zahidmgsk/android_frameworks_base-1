@@ -110,4 +110,6 @@
     <string name="show_fourg_title">Hiện 4G thay cho LTE</string>
     <string name="show_fourg_summary">Thay thế biểu tượng LTE bằng 4G</string>
     <string name="statusbar_items_title">Biểu tượng thanh trạng thái</string>
+    <!-- Alerting notification header label -->
+    <string name="notification_section_header_alerting">Thông báo hiện thị</string>
 </resources>
