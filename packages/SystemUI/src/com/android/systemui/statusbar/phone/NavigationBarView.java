@@ -1089,8 +1089,8 @@ public class NavigationBarView extends FrameLayout implements
                     : getResources().getDimensionPixelSize(
                             com.android.internal.R.dimen.navigation_bar_height);
             int finalHeight = mShowGestureNavbar ? height : 0;
-            int frameHeight = /*mShowGestureNavbar ? */getResources().getDimensionPixelSize(
-                    com.android.internal.R.dimen.navigation_bar_frame_height)/* : 0*/;
+            int frameHeight = showIMESpace() ? getResources().getDimensionPixelSize(
+                    com.android.internal.R.dimen.navigation_bar_frame_height) : 0;
             mBarTransitions.setBackgroundFrame(new Rect(0, frameHeight - finalHeight, w, h));
         }
 
@@ -1292,6 +1292,11 @@ public class NavigationBarView extends FrameLayout implements
 
     public interface OnVerticalChangedListener {
         void onVerticalChanged(boolean isVertical);
+    }
+	
+	 private boolean showIMESpace() {
+        return Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.NAVIGATION_BAR_IME_SPACE, 1, UserHandle.USER_CURRENT) != 0;
     }
 
     private final Consumer<Boolean> mDockedListener = exists -> post(() -> {
