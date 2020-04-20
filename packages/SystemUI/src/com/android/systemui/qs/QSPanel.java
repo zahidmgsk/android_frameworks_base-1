@@ -126,7 +126,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     private BrightnessMirrorController mBrightnessMirrorController;
 
     private boolean mBrightnessBottom;
-    private boolean mQSBrightnessSlider;
 
     public QSPanel(Context context) {
         this(context, null);
@@ -375,7 +374,7 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
     }
 
     public void updateBrightnessMirror() {
-        if (mBrightnessMirrorController != null && !mQSBrightnessSlider) {
+        if (mBrightnessMirrorController != null) {
             ToggleSliderView brightnessSlider = findViewById(R.id.brightness_slider);
             ToggleSliderView mirrorSlider = mBrightnessMirrorController.getMirror()
                     .findViewById(R.id.brightness_slider);
@@ -509,9 +508,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.QS_BOTTOM_BRIGHTNESS),
                     false, this, UserHandle.USER_ALL);
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.BRIGHTNESS_SLIDER_QS_UNEXPANDED),
-                    false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -524,8 +520,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
         public void update() {
             boolean mBottomBrightnessSlider = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.QS_BOTTOM_BRIGHTNESS, 0) != 0;
-            mQSBrightnessSlider = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.BRIGHTNESS_SLIDER_QS_UNEXPANDED, 0) != 0;
 
             if (!mBottomBrightnessSlider) {
                 removeView(mBrightnessView);
@@ -536,11 +530,6 @@ public class QSPanel extends LinearLayout implements Tunable, Callback, Brightne
                 addView(mBrightnessView, getBrightnessViewPositionBottom());
                 mBrightnessBottom = true;
             }
-
-            if (mQSBrightnessSlider) {
-                removeView(mBrightnessView);
-            }
-
         }
     }
 
