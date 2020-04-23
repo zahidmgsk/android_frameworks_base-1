@@ -1015,17 +1015,12 @@ public class WifiConfiguration implements Parcelable {
      * Generate a randomized MAC once and reuse it for all connections to this network
      */
     public static final int RANDOMIZATION_PERSISTENT = 1;
-    /**
-     * @hide
-     * Generate a randomize MAC always
-     */
-    public static final int RANDOMIZATION_ALWAYS = 100;
 
     /**
      * @hide
      * Level of MAC randomization for this network
      */
-    public int macRandomizationSetting = RANDOMIZATION_ALWAYS;
+    public int macRandomizationSetting = RANDOMIZATION_PERSISTENT;
 
     /**
      * @hide
@@ -2434,9 +2429,6 @@ public class WifiConfiguration implements Parcelable {
             recentFailure.setAssociationStatus(source.recentFailure.getAssociationStatus());
             mRandomizedMacAddress = source.mRandomizedMacAddress;
             macRandomizationSetting = source.macRandomizationSetting;
-            if (macRandomizationSetting == 2) {
-                macRandomizationSetting = RANDOMIZATION_NONE;
-            }
             requirePMF = source.requirePMF;
             updateIdentifier = source.updateIdentifier;
         }
@@ -2582,9 +2574,6 @@ public class WifiConfiguration implements Parcelable {
                 config.recentFailure.setAssociationStatus(in.readInt());
                 config.mRandomizedMacAddress = in.readParcelable(null);
                 config.macRandomizationSetting = in.readInt();
-                if (config.macRandomizationSetting == 2) {
-                    config.macRandomizationSetting = RANDOMIZATION_NONE;
-                }
                 config.osu = in.readInt() != 0;
                 return config;
             }
