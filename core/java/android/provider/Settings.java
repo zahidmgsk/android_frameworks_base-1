@@ -6763,6 +6763,15 @@ public final class Settings {
         /** @hide */
         private static final Validator FLASHLIGHT_ON_CALL_RATE_VALIDATOR =
                 new SettingsValidators.InclusiveIntegerRangeValidator(1, 5);
+				
+		/**
+         * Whether to show charging bolt on battery text while charging
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_CHARGING_BOLT = "status_bar_battery_charging_bolt";
+        /** @hide */
+        private static final Validator STATUS_BAR_BATTERY_CHARGING_BOLT_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -6844,6 +6853,7 @@ public final class Settings {
             FINGERPRINT_SUCCESS_VIB,
 	         QS_BLUR,
             QS_BLUR_ALPHA,
+			 STATUS_BAR_BATTERY_CHARGING_BOLT,
             AMBIENT_NOTIFICATION_LIGHT,
             AMBIENT_NOTIFICATION_LIGHT_ACTIVATED,
             AMBIENT_NOTIFICATION_LIGHT_ENABLED,
@@ -7403,6 +7413,7 @@ public final class Settings {
 			 VALIDATORS.put(VOLTE_ICON_STYLE, VOLTE_ICON_STYLE_VALIDATOR);
             VALIDATORS.put(FINGERPRINT_SUCCESS_VIB, FINGERPRINT_SUCCESS_VIB_VALIDATOR);
 	         VALIDATORS.put(QS_BLUR, QS_BLUR_VALIDATOR);
+			 VALIDATORS.put(STATUS_BAR_BATTERY_CHARGING_BOLT, STATUS_BAR_BATTERY_CHARGING_BOLT_VALIDATOR);
             VALIDATORS.put(QS_BLUR_ALPHA, QS_BLUR_ALPHA_VALIDATOR);
             VALIDATORS.put(AMBIENT_NOTIFICATION_LIGHT, AMBIENT_NOTIFICATION_LIGHT_VALIDATOR);
             VALIDATORS.put(AMBIENT_NOTIFICATION_LIGHT_ACTIVATED, AMBIENT_NOTIFICATION_LIGHT_ACTIVATED_VALIDATOR);
