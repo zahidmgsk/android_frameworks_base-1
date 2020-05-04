@@ -4825,16 +4825,6 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
         /**
-         * Whether to allow one finger quick settings expansion on the side of the statusbar.
-         * 0 = 0ff, 1 = right, 2 = left
-         */
-        public static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
-
-        /** @hide */
-        public static final Validator STATUS_BAR_QUICK_QS_PULLDOWN_VALIDATOR =
-                new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
-
-        /**
          *  Enable statusbar double tap gesture on to put device to sleep
          *  0 = 0ff, 1 = on
          */
@@ -6330,7 +6320,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(ADVANCED_REBOOT);
             PRIVATE_SETTINGS.add(LOCKSCREEN_MEDIA_METADATA);
             PRIVATE_SETTINGS.add(LOCKSCREEN_PIN_SCRAMBLE_LAYOUT);
-            PRIVATE_SETTINGS.add(STATUS_BAR_QUICK_QS_PULLDOWN);
             PRIVATE_SETTINGS.add(DOUBLE_TAP_SLEEP_GESTURE);
             PRIVATE_SETTINGS.add(QS_SHOW_AUTO_BRIGHTNESS);
             PRIVATE_SETTINGS.add(QS_SHOW_BRIGHTNESS_SLIDER);
@@ -6553,7 +6542,6 @@ public final class Settings {
             VALIDATORS.put(ADVANCED_REBOOT, ADVANCED_REBOOT_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_MEDIA_METADATA, LOCKSCREEN_MEDIA_METADATA_VALIDATOR);
             VALIDATORS.put(LOCKSCREEN_PIN_SCRAMBLE_LAYOUT, LOCKSCREEN_PIN_SCRAMBLE_LAYOUT_VALIDATOR);
-            VALIDATORS.put(STATUS_BAR_QUICK_QS_PULLDOWN, STATUS_BAR_QUICK_QS_PULLDOWN_VALIDATOR);
             VALIDATORS.put(DOUBLE_TAP_SLEEP_GESTURE, DOUBLE_TAP_SLEEP_GESTURE_VALIDATOR);
             VALIDATORS.put(QS_SHOW_AUTO_BRIGHTNESS, QS_SHOW_AUTO_BRIGHTNESS_VALIDATOR);
             VALIDATORS.put(QS_SHOW_BRIGHTNESS_SLIDER, QS_SHOW_BRIGHTNESS_SLIDER_VALIDATOR);
