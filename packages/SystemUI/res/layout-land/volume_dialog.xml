@@ -126,7 +126,8 @@
                     android:tint="?android:attr/textColorSecondary"
                     android:soundEffectsEnabled="false"
                     android:padding="14dp"
-                    android:rotation="90" />
+                    android:rotation="90"
+                    android:tint="?android:attr/textColorSecondary" />
             </FrameLayout>
         </LinearLayout>
 
