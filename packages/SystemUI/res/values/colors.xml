@@ -212,6 +212,7 @@
    
    <color name="qs_drag_handle_color">#66e5e5e5</color>
 
+    <color name="volume_dialog_background">@android:color/white</color>
     <color name="volume_background_tint">#f2f2f2</color>
 
     <color name="ringer_icon_normal">#5c5c5c</color>
