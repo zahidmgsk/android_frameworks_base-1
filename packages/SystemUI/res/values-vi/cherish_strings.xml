@@ -11,6 +11,8 @@
     <string name="global_action_restart_download">Tải xuống</string>
     <!-- Button to restart the device into fastboot mode, within the Restart Options dialog -->
     <string name="global_action_restart_fastboot">Fastboot</string>
+    <!-- Restart SystemUI via Advanced Power Menu -->
+    <string name="global_action_restart_systemui">SystemUI</string>
     <!-- Label for current user in power menu options dialog -->
     <string name="global_action_current_user">Hiện hành</string>
     <!-- Navigation bar dpad -->
@@ -43,6 +45,9 @@
     <string name="accessibility_quick_settings_ambient_display_on">Màn hình xung quanh bật.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_off">Màn hình xem nhanh đã tắt.</string>
     <string name="accessibility_quick_settings_ambient_display_changed_on">Màn hình xung quanh đã bật.</string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">Màn hình luôn bật</string>
+    <string name="quick_settings_aod_off_powersave_label">Màn hình luôn bật tắt\nTiết kiệm pin</string>
     <!-- Content description of the location tile in quick settings when on, battery saving mode (not shown on the screen). [CHAR LIMIT=NONE] -->
     <string name="accessibility_quick_settings_location_battery_saving">Báo cáo vị trí: chế độ tiết kiệm pin.</string>
     <!-- Content description of the location tile in quick settings when on, sensors only mode (not shown on the screen). [CHAR LIMIT=NONE] -->
@@ -113,11 +118,13 @@
     <!-- Alerting notification header label -->
     <string name="notification_section_header_alerting">Thông báo hiện thị</string>
     <!-- Spidey Analog clock -->
-    <string name="clock_title_spidey" translatable="false">Người nhện</string>
     <!-- Spectrum Analog clock -->
-    <string name="clock_title_spectrum" translatable="false">Quang phổ</string>
     <!-- Dot Analog clock -->
-    <string name="clock_title_dot" translatable="false">Chấm</string>
+    <!-- Sneeky Analog clock -->
     <!-- Custom num Analog clock -->
-    <string name="clock_title_custom_num" translatable="false">Tùy chỉnh với số</string>
+    <!-- PowerShare QS tile -->
+    <string name="quick_settings_powershare_label">PowerShare không dây</string>
+    <string name="quick_settings_powershare_off_powersave_label">PowerShare không dây tắt\nTiết kiệm pin</string>
+    <string name="quick_settings_powershare_off_low_battery_label">PowerShare không dây tắt\nPin quá yếu</string>
+    <string name="quick_settings_powershare_enabled_label">PowerShare không dây đã bật</string>
 </resources>
