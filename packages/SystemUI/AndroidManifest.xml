@@ -252,7 +252,11 @@
     <protected-broadcast android:name="com.android.settings.flashlight.action.FLASHLIGHT_CHANGED" />
 
     <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
-	
+
+    <!-- Pulse -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <!-- Smart space -->
     <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.QSB"/>
     <protected-broadcast android:name="com.google.android.systemui.smartspace.ENABLE_UPDATE"/>

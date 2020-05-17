@@ -121,4 +121,5 @@ interface IStatusBarService
      * Cherish
      */
     void toggleCameraFlash();
+    void screenPinningStateChanged(boolean enabled);
 }
