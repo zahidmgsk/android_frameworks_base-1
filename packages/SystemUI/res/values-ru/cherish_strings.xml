@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Advanced restart menu -->
+    <!-- Button to restart the device, within the Restart Options dialog -->
+    <string name="global_action_restart_system">Система</string>
+    <!-- Button to restart the device into recovery mode, within the Restart Options dialog -->
+    <string name="global_action_restart_recovery">Восстановление</string>
+    <!-- Button to restart the device into bootloader mode, within the Restart Options dialog -->
+    <string name="global_action_restart_bootloader">Загрузчик</string>
+    <!-- Button to restart the device into download mode, within the Restart Options dialog -->
+    <string name="global_action_restart_download">Загрузка</string>
+    <!-- Button to restart the device into fastboot mode, within the Restart Options dialog -->
+    <string name="global_action_restart_fastboot">Быстрая загрузка</string>
+    <!-- Restart SystemUI via Advanced Power Menu -->
+    <string name="global_action_restart_systemui">Системный интерфейс</string>
+    <!-- Label for current user in power menu options dialog -->
+    <string name="global_action_current_user">Текущий</string>
+    <!-- Navigation bar dpad -->
+    <string name="accessibility_dpad_left">Курсор влево</string>
+    <string name="accessibility_dpad_right">Курсор вправо</string>
+    <!-- Custom QS tiles -->
+    <!-- Caffeine QS tile -->
+    <string name="quick_settings_caffeine_label">Запретить сон</string>
+    <string name="accessibility_quick_settings_caffeine_off">Запрет сна выкл.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Запрет сна вкл.</string>
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Всплывающие уведомления</string>
+    <string name="accessibility_quick_settings_heads_up_off">Всплывающие уведомления выключены.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Всплывающие уведомления включены.</string>
+    <string name="accessibility_quick_settings_heads_up_changed_off">Всплывающие уведомления были выключены</string>
+    <string name="accessibility_quick_settings_heads_up_changed_on">Всплывающие уведомления были включены.</string>
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Синхронизация</string>
+    <string name="accessibility_quick_settings_sync_off">Синхронизация выключена.</string>
+    <string name="accessibility_quick_settings_sync_on">Синхронизация включена.</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Синхронизация была отключена.</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Синхронизация была включена.</string>
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB-модем</string>
+    <!-- Volume panel QS tile -->
+    <string name="quick_settings_volume_panel_label">Панель громкости</string>
+    <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Активный дисплей</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Активный дисплей выключен.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Активный дисплей включён.</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Активный дисплей был выключен. </string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Активный дисплей был включён. </string>
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">Всегда включённый дисплей</string>
+    <string name="quick_settings_aod_off_powersave_label">Всегда включённый дисплей выкл.\nЭкономия заряда батареи</string>
+    <!-- Content description of the location tile in quick settings when on, battery saving mode (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_battery_saving">Определение местоположения: режим энергосбережения.</string>
+    <!-- Content description of the location tile in quick settings when on, sensors only mode (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_gps_only">Определение местоположения: только по спутникам.</string>
+    <!-- Content description of the location tile in quick settings when on, high accuracy mode (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_high_accuracy">Отправка местоположения: режим высокой точности.</string>
+    <!-- QuickSettings: Location (On, low-power) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_battery_saving_label">Энергосебережение</string>
+    <string name="quick_settings_location_battery_saving_label_twoline">Экономия\nзаряда</string>
+    <!-- QuickSettings: Location (On, gps-only) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_gps_only_label">Только устройство</string>
+    <string name="quick_settings_location_gps_only_label_twoline">Только\nустройство</string>
+    <!-- QuickSettings: Location (On, high-accuracy) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_high_accuracy_label">Высокая точность</string>
+    <string name="quick_settings_location_high_accuracy_label_twoline">Высокая\nточность</string>
+    <!-- QuickSettings: Location detail panel title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_detail_title">Местоположение</string>
+    <!-- QuickSettings: Location detail panel menu title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_detail_menu_title">Выбрать режим:</string>
+    <!-- [CHAR LIMIT=30] Location detail panel, high accuracy location mode -->
+    <string name="quick_settings_location_detail_mode_high_accuracy_title">Высокая точность</string>
+    <!-- [CHAR LIMIT=30] Location detail panel, battery saving location mode -->
+    <string name="quick_settings_location_detail_mode_battery_saving_title">Энергосебережение</string>
+    <!-- [CHAR LIMIT=30] Location detail panel, device only location mode -->
+    <string name="quick_settings_location_detail_mode_sensors_only_title">Только устройство</string>
+    <!-- [CHAR LIMIT=130] Location detail panel, description for high accuracy mode -->
+    <string name="quick_settings_location_detail_mode_high_accuracy_description">Использовать GPS, Wi\u2011Fi, Bluetooth или мобильную сеть для определения местоположения </string>
+    <!-- [CHAR LIMIT=130] Location detail panel, description for battery saving mode -->
+    <string name="quick_settings_location_detail_mode_battery_saving_description">Использовать Wi\u2011Fi, Bluetooth или мобильную сеть для определения местоположения</string>
+    <!-- [CHAR LIMIT=130] Location detail panel, description for sensors only mode -->
+    <string name="quick_settings_location_detail_mode_sensors_only_description">Использовать GPS для определения местоположения</string>
+    <!-- VPN QS tile -->
+    <string name="quick_settings_vpn_label">ВПН</string>
+    <string name="quick_settings_vpn_connect_dialog_title">Подключить к\u2026</string>
+    <string name="vpn_credentials_hint">Пожалуйста, введите ваши учетные данные для подключения к <xliff:g id="name">%s</xliff:g></string>
+    <string name="vpn_credentials_username">Имя пользователя</string>
+    <string name="vpn_credentials_password">Пароль</string>
+    <string name="vpn_credentials_dialog_connect">Соединить</string>
+    <!-- QS customizer -->
+    <string name="drag_or_tap_to_add_tiles">Перетащите или нажмите для добавления/удаления плиток</string>
+    <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Режим чтения</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Режим чтения включён.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Режим чтения выключен.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_on">Режим чтения активирован.</string>
+    <string name="accessibility_quick_settings_reading_mode_changed_off">Режим чтения деактивирован.</string>
+    <!-- Screen pinning dialog description. (for devices without navbar) -->
+    <string name="screen_pinning_description_no_navbar">Приложение останется активным, пока вы не отмените блокировку долгим нажатием кнопки «Назад».</string>
+    <!-- Notify use that they are in Lock-to-app (for devices without navbar)-->
+    <string name="screen_pinning_toast_no_navbar">Чтобы открепить экран, нажмите и удерживайте кнопку «Назад»</string>
+    <!-- Screen pinning dialog description. (for devices without navbar and with gestures on fingerprint sensor) -->
+    <string name="screen_pinning_description_no_navbar_fpsensor">Приложение остаётся активным, до тех пор, пока вы не отмените блокировку. Нажмите и удерживайте палец на сканере отпечатков, чтобы отменить блокировку.</string>
+    <!-- Notify use that they are in Lock-to-app (for devices without navbar and with gestures on fingerprint sensor)-->
+    <string name="screen_pinning_toast_no_navbar_fpsensor">Чтобы разблокировать экран, нажмите и удерживайте палец на сканере отпечатков пальцев</string>
+    <!-- Name of the nfc status bar icon. -->
+    <string name="status_bar_nfc">НФС</string>
+    <!-- Accessibility label for nfc icon (not shown on screen) [CHAR LIMIT=NONE] -->
+    <string name="accessibility_status_bar_nfc">Нфс</string>
+    <!-- Status bar network traffic monitor strings -->
+    <string name="kilobitspersecond_short">КБ/с</string>
+    <string name="megabitspersecond_short">Мб/с</string>
+    <string name="kilobytespersecond_short">кБ/с</string>
+    <string name="megabytespersecond_short">МБ/с</string>
+    <!-- 4G LTE switch -->
+    <string name="show_fourg_title">Показать 4G вместо LTE</string>
+    <string name="show_fourg_summary">Заменить индикатор LTE на 4G в строке состояния</string>
+    <string name="statusbar_items_title">Значки строки состояния</string>
+    <!-- Alerting notification header label -->
+    <string name="notification_section_header_alerting">Предупреждающие уведомления</string>
+    <!-- Spidey Analog clock -->
+    <!-- Spectrum Analog clock -->
+    <!-- Dot Analog clock -->
+    <!-- Sneeky Analog clock -->
+    <!-- Custom num Analog clock -->
+    <!-- PowerShare QS tile -->
+    <string name="quick_settings_powershare_label">Беспроводной режим</string>
+    <string name="quick_settings_powershare_off_powersave_label">Беспроводная режим\nЭкономия заряда батареи</string>
+    <string name="quick_settings_powershare_off_low_battery_label">Беспроводная режим\nБатарея слишком низкий</string>
+    <string name="quick_settings_powershare_enabled_label">Беспроводной режим включена</string>
+</resources>
