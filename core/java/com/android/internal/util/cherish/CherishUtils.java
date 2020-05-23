@@ -36,6 +36,7 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.os.SystemClock;
+import android.text.format.Time;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -65,6 +66,24 @@ public class CherishUtils {
     public static final String INTENT_REGION_SCREENSHOT = "action_handler_region_screenshot";
 
     private static OverlayManager mOverlayService;
+	
+	// Check if device is connected to Wi-Fi
+    public static boolean isWiFiConnected(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (cm == null) return false;
+
+        NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        return wifi.isConnected();
+    }
+	
+	// Returns today's passed time in Millisecond
+    public static long getTodayMillis() {
+        final long passedMillis;
+        Time time = new Time();
+        time.set(System.currentTimeMillis());
+        passedMillis = ((time.hour * 60 * 60) + (time.minute * 60) + time.second) * 1000;
+        return passedMillis;
+    }
 	
 	// Check if device is connected to the internet
     public static boolean isConnected(Context context) {
