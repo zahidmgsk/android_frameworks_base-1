@@ -6686,9 +6686,16 @@ public final class Settings {
 
         /**
          * Show data usage in QS header
+         * 0 = Disabled
+         * 1 = Show daily usage
+         * 2 = Show monthly usage
          * @hide
          */
         public static final String QS_DATAUSAGE = "qs_datausage";
+		
+		 /** @hide */
+        private static final Validator QS_DATAUSAGE_VALIDATOR =
+                new SettingsValidators.InclusiveIntegerRangeValidator(0, 2);
 
         /**
          * @hide
@@ -6884,6 +6891,7 @@ public final class Settings {
             DOZE_ON_CHARGE,
             CHARGING_ANIMATION,
             CENTER_NOTIFICATION_HEADERS,
+			QS_DATAUSAGE,
         };
 
         /**
@@ -7170,6 +7178,7 @@ public final class Settings {
 			PRIVATE_SETTINGS.add(DOZE_ON_CHARGE);
             PRIVATE_SETTINGS.add(QS_HEADER_STYLE);
             PRIVATE_SETTINGS.add(CHARGING_ANIMATION);
+			PRIVATE_SETTINGS.add(QS_DATAUSAGE);
         }
 
         /**
@@ -7446,6 +7455,7 @@ public final class Settings {
             VALIDATORS.put(DOZE_ON_CHARGE, DOZE_ON_CHARGE_VALIDATOR);
             VALIDATORS.put(CHARGING_ANIMATION, CHARGING_ANIMATION_VALIDATOR);
             VALIDATORS.put(CENTER_NOTIFICATION_HEADERS, CENTER_NOTIFICATION_HEADERS_VALIDATOR);
+			VALIDATORS.put(QS_DATAUSAGE, QS_DATAUSAGE_VALIDATOR);
         }
 
         /**

@@ -221,7 +221,6 @@ import com.android.systemui.statusbar.ScrimView;
 import com.android.systemui.statusbar.StatusBarState;
 import com.android.systemui.statusbar.SysuiStatusBarStateController;
 import com.android.systemui.statusbar.VibratorHelper;
-import com.android.systemui.statusbar.info.DataUsageView;
 import com.android.systemui.navigation.pulse.VisualizerView;
 import com.android.systemui.statusbar.notification.ActivityLaunchAnimator;
 import com.android.systemui.statusbar.notification.BypassHeadsUpNotifier;
@@ -1191,12 +1190,6 @@ public class StatusBar extends SystemUI implements DemoMode,
 		int QSBlurIntensity = Settings.System.getInt(mContext.getContentResolver(),
               Settings.System.QS_BLUR_INTENSITY, 30); // defaulting to 7.5f radius
         boolean enoughBlurData = (QSBlurAlpha > 0 && QSBlurIntensity > 0);
-		
-		if (QSBlurAlpha > 0 && !dataupdated && !mIsKeyguard) {
-            DataUsageView.updateUsage();
-            dataupdated = true;
-        }
-
 
         if (enoughBlurData && !blurperformed && !mIsKeyguard && isQSBlurEnabled()) {
             Bitmap bittemp = ImageUtilities.blurImage(mContext,
@@ -1206,7 +1199,6 @@ public class StatusBar extends SystemUI implements DemoMode,
             mQSBlurView.setBackgroundDrawable(blurbackground);
         } else if (!enoughBlurData || mState == StatusBarState.KEYGUARD) {
             blurperformed = false;
-			 dataupdated = false;
             mQSBlurView.setBackgroundColor(Color.TRANSPARENT);
         }
         mQSBlurView.setAlpha(QSBlurAlpha);
