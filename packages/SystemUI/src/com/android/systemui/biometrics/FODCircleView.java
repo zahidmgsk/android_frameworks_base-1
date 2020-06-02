@@ -432,7 +432,7 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
 
         mPaintFingerprint.setColor(mColor);
 
-        setImageResource(R.drawable.fod_icon_pressed);
+        setImageDrawable(null);
         invalidate();
     }
 
