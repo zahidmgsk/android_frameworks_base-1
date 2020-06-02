@@ -121,12 +121,6 @@
     <java-symbol type="bool" name="config_defaultCABC" />
     <java-symbol type="bool" name="config_filterDisplayModes" />
     <java-symbol type="array" name="config_displayModeMappings" />
-
-    <!-- Library path of screen off fod handler -->
-    <java-symbol type="string" name="config_fodScreenOffHandlerLib" />
-
-    <!-- Class name of screen off fod handler -->
-    <java-symbol type="string" name="config_fodScreenOffHandlerClass" />
 	
 	<!-- Whether device supports an alt. ambient display -->
     <java-symbol type="bool" name="config_alt_ambient_display"/>
