@@ -71,6 +71,6 @@
 	
 	<!-- the padding on the start and the end of the statusbar -->
     <dimen name="status_bar_extra_padding">0dp</dimen>
-
-
+	
+	<dimen name="volume_dialog_panel_land_margin">68dp</dimen>
 </resources>
