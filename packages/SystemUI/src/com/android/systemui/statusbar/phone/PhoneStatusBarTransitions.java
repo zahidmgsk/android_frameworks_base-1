@@ -42,9 +42,7 @@ public final class PhoneStatusBarTransitions extends BarTransitions {
         super(backgroundView, R.drawable.status_background);
         final Resources res = statusBarView.getContext().getResources();
         mIconAlphaWhenOpaque = res.getFraction(R.dimen.status_bar_icon_drawing_alpha, 1, 1);
-    }
 
-    public void init() {
         mLeftSide = statusBarView.findViewById(R.id.status_bar_left_side);
         mStatusIcons = statusBarView.findViewById(R.id.statusIcons);
         mBattery = statusBarView.findViewById(R.id.battery);

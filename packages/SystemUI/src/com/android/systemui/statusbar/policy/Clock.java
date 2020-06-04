@@ -344,7 +344,7 @@ public class Clock extends TextView implements DemoMode, CommandQueue.Callbacks,
                     return;
                 });
             }
-            handler().post(() -> updateClock());
+            handler.post(() -> updateClock());
             if (mClockAutoHide) autoHideHandler.post(() -> updateClockVisibility());
         }
     };
