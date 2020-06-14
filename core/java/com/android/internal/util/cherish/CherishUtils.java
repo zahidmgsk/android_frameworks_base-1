@@ -41,6 +41,7 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.os.UserHandle;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.InputDevice;
 import android.view.IWindowManager;
 import android.view.KeyCharacterMap;
@@ -314,5 +315,11 @@ public class CherishUtils {
         boolean twoThreeButtonEnabled = isThemeEnabled("com.android.internal.systemui.navbar.twobutton") ||
                 isThemeEnabled("com.android.internal.systemui.navbar.threebutton");
         return setNavbarHeight || twoThreeButtonEnabled;
+    }
+	
+	public static int getThemeAccentColor (final Context context) {
+        final TypedValue value = new TypedValue();
+        context.getTheme().resolveAttribute(android.R.attr.colorAccent, value, true);
+        return value.data;
     }
 }
