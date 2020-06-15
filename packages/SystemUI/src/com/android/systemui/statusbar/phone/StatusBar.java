@@ -538,7 +538,7 @@ public class StatusBar extends SystemUI implements DemoMode,
     protected NotificationRemoteInputManager mRemoteInputManager;
     private boolean mWallpaperSupported;
 
-    private int mChargingAnimation = 1;
+    private int mChargingAnimation;
 
     private boolean mWallpaperSupportsAmbientMode;
     private final BroadcastReceiver mWallpaperChangedReceiver = new BroadcastReceiver() {
@@ -991,7 +991,6 @@ public class StatusBar extends SystemUI implements DemoMode,
                 SystemUIFactory.getInstance().createKeyguardIndicationController(mContext,
                         mStatusBarWindow.findViewById(R.id.keyguard_indication_area),
                         mStatusBarWindow.findViewById(R.id.lock_icon));
-        mKeyguardIndicationController.updateChargingIndication(mChargingAnimation);
         mNotificationPanel.setKeyguardIndicationController(mKeyguardIndicationController);
 
         mAmbientIndicationContainer = mStatusBarWindow.findViewById(
@@ -4709,7 +4708,7 @@ public class StatusBar extends SystemUI implements DemoMode,
         mChargingAnimation = Settings.System.getIntForUser(mContext.getContentResolver(),
                 Settings.System.LOCKSCREEN_CHARGING_ANIMATION_STYLE, 1, UserHandle.USER_CURRENT);
         if (mKeyguardIndicationController != null) {
-            mKeyguardIndicationController.updateChargingIndication(mChargingAnimation);
+            mKeyguardIndicationController.updateChargingIndication();
         }
     }
 
