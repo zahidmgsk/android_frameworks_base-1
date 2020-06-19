@@ -45,4 +45,5 @@
             android:textSize="32sp"
             android:format12Hour="d"
             android:format24Hour="d"/>
+	</LinearLayout>
 </com.android.keyguard.clock.ClockLayout>
