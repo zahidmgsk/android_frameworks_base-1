@@ -5649,6 +5649,15 @@ public final class Settings {
          */
         public static final String QS_BLUR = "qs_blur";
 
+        /**
+         * VoWiFi icon style
+         * @hide
+         */
+        public static final String VOWIFI_ICON_STYLE = "vowifi_icon_style";
+
+        /** @hide */
+        public static final Validator VOWIFI_ICON_STYLE_VALIDATOR = ANY_INTEGER_VALIDATOR;
+
         /** @hide */
         private static final Validator QS_BLUR_VALIDATOR = BOOLEAN_VALIDATOR;
 		
@@ -6706,6 +6715,7 @@ public final class Settings {
             VALIDATORS.put(WIFI_STATIC_DNS1, WIFI_STATIC_DNS1_VALIDATOR);
             VALIDATORS.put(WIFI_STATIC_DNS2, WIFI_STATIC_DNS2_VALIDATOR);
             VALIDATORS.put(VOWIFI_ICON, VOWIFI_ICON_VALIDATOR);
+            VALIDATORS.put(VOWIFI_ICON_STYLE, VOWIFI_ICON_STYLE_VALIDATOR);
             VALIDATORS.put(NOTIFICATION_LIGHT_PULSE, BOOLEAN_VALIDATOR);
             VALIDATORS.put(BUTTON_BACKLIGHT_TIMEOUT, BUTTON_BACKLIGHT_TIMEOUT_VALIDATOR);
             VALIDATORS.put(BUTTON_BRIGHTNESS, BUTTON_BRIGHTNESS_VALIDATOR);
