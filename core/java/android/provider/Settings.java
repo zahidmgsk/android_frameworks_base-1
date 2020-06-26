@@ -6252,6 +6252,12 @@ public final class Settings {
          */
         public static final String TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK = "touchscreen_gesture_haptic_feedback";
 
+          /**
+           * Whether show/hide things in volume panel
+           * @hide
+           */
+          public static final String HIDE_THINGS_VOLUMEPANEL = "hide_things_volumepanel";
+
         /**
          * Settings dashboard icon style
          * @hide
