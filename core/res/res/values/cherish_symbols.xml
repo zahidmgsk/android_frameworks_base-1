@@ -225,4 +225,7 @@
     <java-symbol type="string" name="gaming_mode_disabled_toast" />
 
     <java-symbol type="color" name="gradient_end" />
+	
+	<!-- Clipboard force notify packages -->
+    <java-symbol type="array" name="config_notifyClipboardPackages" />
 </resources>
