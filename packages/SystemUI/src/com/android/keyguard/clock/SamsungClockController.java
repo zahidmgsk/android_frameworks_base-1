@@ -113,21 +113,18 @@ public class SamsungClockController implements ClockPlugin {
     @Override
     public Bitmap getPreview(int width, int height) {
 
-        View previewView = mLayoutInflater.inflate(R.layout.default_clock_preview, null);
-        TextClock previewTime = previewView.findViewById(R.id.time);
-        previewTime.setFormat12Hour("hh\nmm");
-        previewTime.setFormat24Hour("kk\nmm");
-        TextClock previewDate = previewView.findViewById(R.id.date);
+        // Use the big clock view for the preview
+        View view = getBigClockView();
 
         // Initialize state of plugin before generating preview.
-        previewTime.setTextColor(Color.WHITE);
-        previewDate.setTextColor(Color.WHITE);
+        setTextColor(Color.WHITE);
+        setTextColor(Color.WHITE);
         ColorExtractor.GradientColors colors = mColorExtractor.getColors(
                 WallpaperManager.FLAG_LOCK);
         setColorPalette(colors.supportsDarkText(), colors.getColorPalette());
         onTimeTick();
 
-        return mRenderer.createPreview(previewView, width, height);
+        return mRenderer.createPreview(view, width, height);
     }
 
     @Override
