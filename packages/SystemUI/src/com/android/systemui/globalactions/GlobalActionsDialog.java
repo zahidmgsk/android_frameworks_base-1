@@ -980,7 +980,11 @@ public class GlobalActionsDialog implements DialogInterface.OnDismissListener,
 
         @Override
         public boolean onLongPress() {
-            mScreenshotHelper.takeScreenshot(2, true, true, mHandler, null);
+            if (FeatureFlagUtils.isEnabled(mContext, FeatureFlagUtils.SCREENRECORD_LONG_PRESS)) {
+                mScreenRecordHelper.launchRecordPrompt();
+            } else {
+                mScreenshotHelper.takeScreenshot(2, true, true, mHandler, null);
+            }
             return true;
         }
     }
