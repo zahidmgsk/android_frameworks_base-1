@@ -33,7 +33,8 @@
 
     <string name="date_long_title_today">Today is %s</string>
 	
-	<!-- Oneplus Numbers clock -->
+    <!-- Oneplus clock -->
     <string name="clock_title_oneplus_numbers" translatable="false">OnePlus Numbers</string>
+    <string name="clock_title_oneplus_minimal" translatable="false">OnePlus Minimal</string>
 
 </resources>
