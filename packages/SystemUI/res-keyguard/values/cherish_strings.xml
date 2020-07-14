@@ -36,5 +36,6 @@
     <!-- Oneplus clock -->
     <string name="clock_title_oneplus_numbers" translatable="false">OnePlus Numbers</string>
     <string name="clock_title_oneplus_minimal" translatable="false">OnePlus Minimal</string>
+    <string name="clock_title_oneplus_roman" translatable="false">OnePlus Roman</string>
 
 </resources>
