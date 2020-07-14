@@ -32,5 +32,8 @@
     <string name="clock_title_samsung_accent" translatable="false">Samsung (colored)</string>
 
     <string name="date_long_title_today">Today is %s</string>
+	
+	<!-- Oneplus Numbers clock -->
+    <string name="clock_title_oneplus_numbers" translatable="false">OnePlus Numbers</string>
 
 </resources>
