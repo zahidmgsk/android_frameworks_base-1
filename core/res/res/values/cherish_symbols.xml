@@ -223,4 +223,6 @@
     <java-symbol type="string" name="gaming_mode_notification_content" />
     <java-symbol type="string" name="gaming_mode_enabled_toast" />
     <java-symbol type="string" name="gaming_mode_disabled_toast" />
+
+    <java-symbol type="color" name="gradient_end" />
 </resources>
