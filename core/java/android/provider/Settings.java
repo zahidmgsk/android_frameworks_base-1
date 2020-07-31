@@ -5698,7 +5698,7 @@ public final class Settings {
         private static final Validator QS_BLUR_INTENSITY_VALIDATOR = ANY_INTEGER_VALIDATOR;
 
         private static final Validator LOCKSCREEN_CHARGING_ANIMATION_STYLE_VALIDATOR =
-                new SettingsValidators.InclusiveIntegerRangeValidator(0, 10);
+                new SettingsValidators.InclusiveIntegerRangeValidator(0, 11);
 
         /**
          * Whether the battery light should be enabled (if hardware supports it)

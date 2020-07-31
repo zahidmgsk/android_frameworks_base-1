@@ -108,6 +108,16 @@
             app:lottie_loop="true"
             android:visibility="gone" />
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/charging_indication_10"
+            android:layout_width="@dimen/keyguard_charging_indication_width"
+            android:layout_height="@dimen/keyguard_charging_indication_height"
+            android:layout_gravity="center_horizontal"
+            android:clickable="false"
+            app:lottie_fileName="loading.json"
+            app:lottie_loop="true"
+            android:visibility="gone" />
+
   <include layout="@layout/keyguard_indication_text_view" />
 
 </LinearLayout>
