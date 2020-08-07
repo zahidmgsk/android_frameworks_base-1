@@ -79,6 +79,14 @@ public class ThemesUtils {
         "com.android.system.navbar.tecno", //4
     };
 	
+	public static final String[] UI_THEMES = {
+            "com.android.systemui.ui.default",
+            "com.android.systemui.ui.nocornerradius",
+            "com.android.systemui.ui.rectangle",
+            "com.android.systemui.ui.roundlarge",
+            "com.android.systemui.ui.roundmedium",
+    };
+	
 	private static final String[] QS_TILE_THEMES = {
         "com.android.systemui.qstile.default", // 0
         "com.android.systemui.qstile.circletrim", // 1
@@ -247,6 +255,31 @@ public class ThemesUtils {
         try {
             om.setEnabled(NAVBAR_STYLES[navbarStyle], true, userId);
         } catch (RemoteException e) {
+        }
+    }
+	
+	public static void updateUIStyle(IOverlayManager om, int userId, int uiStyle) {
+        if (uiStyle == 0) {
+            stockUIStyle(om, userId);
+        } else {
+            try {
+                om.setEnabled(UI_THEMES[uiStyle],
+                        true, userId);
+            } catch (RemoteException e) {
+                Log.w(TAG, "Can't change switch theme", e);
+            }
+        }
+    }
+
+    public static void stockUIStyle(IOverlayManager om, int userId) {
+        for (int i = 0; i < UI_THEMES.length; i++) {
+            String uitheme = UI_THEMES[i];
+            try {
+                om.setEnabled(uitheme,
+                        false /*disable*/, userId);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
