@@ -6721,6 +6721,15 @@ public final class Settings {
         public static final String AUTO_BRIGHTNESS_MIN_VALUE = "auto_brightness_min_value";
 
         /**
+         * Controls whether to center R style notification headers
+         * by.tikkiX2
+         * @hide
+         */
+        public static final String CENTER_NOTIFICATION_HEADERS = "center_notification_headers";
+
+        private static final Validator CENTER_NOTIFICATION_HEADERS_VALIDATOR = BOOLEAN_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -6874,6 +6883,7 @@ public final class Settings {
             PULSE_AMBIENT_LIGHT_RIGHT_DURATION,
             DOZE_ON_CHARGE,
             CHARGING_ANIMATION,
+            CENTER_NOTIFICATION_HEADERS,
         };
 
         /**
@@ -7435,6 +7445,7 @@ public final class Settings {
             VALIDATORS.put(PULSE_AMBIENT_LIGHT_RIGHT_DURATION, PULSE_AMBIENT_LIGHT_RIGHT_DURATION_VALIDATOR);
             VALIDATORS.put(DOZE_ON_CHARGE, DOZE_ON_CHARGE_VALIDATOR);
             VALIDATORS.put(CHARGING_ANIMATION, CHARGING_ANIMATION_VALIDATOR);
+            VALIDATORS.put(CENTER_NOTIFICATION_HEADERS, CENTER_NOTIFICATION_HEADERS_VALIDATOR);
         }
 
         /**
