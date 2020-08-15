@@ -6456,6 +6456,14 @@ public final class Settings {
                 ANY_STRING_VALIDATOR;
 
         /**
+         * Header height
+         * @hide
+         */
+        public static final String STATUS_BAR_CUSTOM_HEADER_HEIGHT = "status_bar_custom_header_height";
+
+        private static final Validator STATUS_BAR_CUSTOM_HEADER_HEIGHT_VALIDATOR = ANY_INTEGER_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -6587,7 +6595,8 @@ public final class Settings {
             STATUS_BAR_DAYLIGHT_HEADER_PACK,
             STATUS_BAR_CUSTOM_HEADER_PROVIDER,
             STATUS_BAR_CUSTOM_HEADER_IMAGE,
-            STATUS_BAR_FILE_HEADER_IMAGE
+            STATUS_BAR_FILE_HEADER_IMAGE,
+            STATUS_BAR_CUSTOM_HEADER_HEIGHT,
         };
 
         /**
@@ -6855,7 +6864,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(STATUS_BAR_DAYLIGHT_HEADER_PACK);
             PRIVATE_SETTINGS.add(STATUS_BAR_CUSTOM_HEADER_PROVIDER);
             PRIVATE_SETTINGS.add(STATUS_BAR_CUSTOM_HEADER_IMAGE);
-            PRIVATE_SETTINGS.add(STATUS_BAR_FILE_HEADER_IMAGE);
+			 PRIVATE_SETTINGS.add(STATUS_BAR_FILE_HEADER_IMAGE);
+            PRIVATE_SETTINGS.add(STATUS_BAR_CUSTOM_HEADER_HEIGHT);
         }
 
         /**
@@ -7111,6 +7121,7 @@ public final class Settings {
                     STATUS_BAR_CUSTOM_HEADER_IMAGE_VALIDATOR);
             VALIDATORS.put(STATUS_BAR_FILE_HEADER_IMAGE,
                     STATUS_BAR_FILE_HEADER_IMAGE_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_CUSTOM_HEADER_HEIGHT, STATUS_BAR_CUSTOM_HEADER_HEIGHT_VALIDATOR);
         }
 
         /**
