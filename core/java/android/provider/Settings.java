@@ -6680,6 +6680,11 @@ public final class Settings {
         public static final String QS_DATAUSAGE = "qs_datausage";
 
         /**
+         * @hide
+         */
+        public static final String QS_HEADER_STYLE = "qs_header_style";
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -7117,6 +7122,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(PULSE_AMBIENT_LIGHT_COLOR_RIGHT);
             PRIVATE_SETTINGS.add(PULSE_AMBIENT_LIGHT_RIGHT_DURATION);
 			PRIVATE_SETTINGS.add(DOZE_ON_CHARGE);
+            PRIVATE_SETTINGS.add(QS_HEADER_STYLE);
         }
 
         /**

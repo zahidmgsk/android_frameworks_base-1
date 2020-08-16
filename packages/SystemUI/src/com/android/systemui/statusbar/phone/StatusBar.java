@@ -77,6 +77,7 @@ import android.hardware.display.DisplayManager;
 import android.graphics.drawable.GradientDrawable;
 import android.content.IntentFilter;
 import android.content.om.IOverlayManager;
+import android.content.om.OverlayInfo;
 import android.content.pm.IPackageManager;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -147,6 +148,7 @@ import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.statusbar.IStatusBarService;
 import com.android.internal.statusbar.RegisterStatusBarResult;
+import com.android.internal.util.cherish.ThemesUtils;
 import com.android.internal.widget.LockPatternUtils;
 import com.android.keyguard.KeyguardUpdateMonitor;
 import com.android.keyguard.KeyguardUpdateMonitorCallback;
@@ -721,6 +723,8 @@ public class StatusBar extends SystemUI implements DemoMode,
 
         mUiModeManager = mContext.getSystemService(UiModeManager.class);
         mKeyguardViewMediator = getComponent(KeyguardViewMediator.class);
+		mOverlayManager = IOverlayManager.Stub.asInterface(
+                ServiceManager.getService(Context.OVERLAY_SERVICE));
         mNavigationBarSystemUiVisibility = mNavigationBarController.createSystemUiVisibility();
         mActivityIntentHelper = new ActivityIntentHelper(mContext);
 
@@ -3705,6 +3709,18 @@ public class StatusBar extends SystemUI implements DemoMode,
         ThemesUtils.stockTileStyle(mOverlayManager, mLockscreenUserManager.getCurrentUserId());
     }
 
+    // Switches qs header style from stock to custom
+    public void updateQSHeaderStyle() {
+        int qsHeaderStyle = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.QS_HEADER_STYLE, 0, mLockscreenUserManager.getCurrentUserId());
+        ThemesUtils.updateQSHeaderStyle(mOverlayManager, mLockscreenUserManager.getCurrentUserId(), qsHeaderStyle);
+    }
+
+    // Unload all qs header styles back to stock
+    public void stockQSHeaderStyle() {
+        ThemesUtils.stockQSHeaderStyle(mOverlayManager, mLockscreenUserManager.getCurrentUserId());
+    }
+
     private void updateDozingState() {
         Trace.traceCounter(Trace.TRACE_TAG_APP, "dozing", mDozing ? 1 : 0);
         Trace.beginSection("StatusBar#updateDozingState");
@@ -5148,6 +5164,9 @@ public class StatusBar extends SystemUI implements DemoMode,
 			resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.BACK_GESTURE_HAPTIC),
                     false, this, UserHandle.USER_ALL);
+			resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.QS_HEADER_STYLE),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5194,6 +5213,9 @@ public class StatusBar extends SystemUI implements DemoMode,
                 mQSPanel.getHost().reloadAllTiles();
 			} else if (uri.equals(Settings.System.getUriFor(Settings.System.BACK_GESTURE_HAPTIC))) {
                 setHapticFeedbackForBackGesture();
+			} else if (uri.equals(Settings.System.getUriFor(Settings.System.QS_HEADER_STYLE))) {
+                stockQSHeaderStyle();
+                updateQSHeaderStyle();
             }
 			update();
         }
@@ -5213,6 +5235,8 @@ public class StatusBar extends SystemUI implements DemoMode,
 			setHeadsUpStoplist();
             setHeadsUpBlacklist();
 			setHapticFeedbackForBackGesture();
+			stockQSHeaderStyle();
+            updateQSHeaderStyle();
         }
     }
 
