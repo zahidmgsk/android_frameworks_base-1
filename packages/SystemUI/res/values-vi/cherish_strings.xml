@@ -158,8 +158,13 @@
     <string name="global_action_screenshot_cust">"Ảnh chụp /Quay"</string>
     <!--Screenrecord Tile-->
     <string name="screenrecorder_title_tile">Quay màn hình</string>
-	<!-- DataSwitch Tile -->
-    <string name="qs_data_switch_label">Đổi thẻ SIM dữ liệu</string>
+    <!-- DataSwitch Tile -->
+    <string name="qs_data_switch_label">Chuyển đổi Sim dữ liệu</string>
     <string name="qs_data_switch_changed_1">Sử dụng SIM 1 cho dữ liệu di động</string>
-    <string name="qs_data_switch_changed_2">Sử dụng SIM 2 cho dữ liệu di động</string>
+    <string name="qs_data_switch_changed_2">Sử dụng Sim 2 cho dữ liệu di động</string>
+    <!-- Dash Charging -->
+    <string name="keyguard_indication_dash_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Sạc không giây (<xliff:g id="charging_time_left" example="4 giờ và 2 phút">%s</xliff:g> đến khi đầy)</string>
+    <string name="keyguard_plugged_in_dash_charging">Sạc không dây</string>
+    <!-- QS Header data usage info -->
+    <string name="usage_data">Đã sử dụng</string>
 </resources>
