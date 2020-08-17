@@ -247,8 +247,6 @@ public class FODCircleView extends ImageView implements ConfigurationListener {
     }
 
     private class FodGestureSettingsObserver extends ContentObserver {
-        Context mContext;
-
         FodGestureSettingsObserver(Context context, Handler handler) {
             super(handler);
         }
