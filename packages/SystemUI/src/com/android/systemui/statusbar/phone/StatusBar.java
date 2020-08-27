@@ -5311,6 +5311,9 @@ public class StatusBar extends SystemUI implements DemoMode,
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL),
                     false, this, UserHandle.USER_ALL);
+			resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.BRIGHTNESS_SLIDER_STYLE),
+                    false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -5385,8 +5388,14 @@ public class StatusBar extends SystemUI implements DemoMode,
 			stockQSHeaderStyle();
             updateQSHeaderStyle();
 			setScreenBrightnessMode();
+			updateBrightnessSliderStyle();
         }
     }
+	
+	public void updateBrightnessSliderStyle() {
+         int brighthnessSliderStyle = Settings.System.getIntForUser(mContext.getContentResolver(),
+                 Settings.System.BRIGHTNESS_SLIDER_STYLE, 0, mLockscreenUserManager.getCurrentUserId());
+     }
 	
 	private void setScreenBrightnessMode() {
         int mode = Settings.System.getIntForUser(mContext.getContentResolver(),

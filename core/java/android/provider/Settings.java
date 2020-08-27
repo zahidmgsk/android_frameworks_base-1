@@ -6869,6 +6869,11 @@ public final class Settings {
         /** @hide */
         private static final Validator BATTERY_BAR_USE_GRADIENT_COLOR_VALIDATOR =
                 BOOLEAN_VALIDATOR;
+				
+		 /**
+         * @hide
+         */
+        public static final String BRIGHTNESS_SLIDER_STYLE = "brightness_slider_style";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
@@ -7331,6 +7336,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(FLASHLIGHT_ON_CALL);
             PRIVATE_SETTINGS.add(FLASHLIGHT_ON_CALL_IGNORE_DND);
             PRIVATE_SETTINGS.add(FLASHLIGHT_ON_CALL_RATE);
+            PRIVATE_SETTINGS.add(BRIGHTNESS_SLIDER_STYLE);
         }
 
         /**
