@@ -56,42 +56,31 @@ LOCAL_REQUIRED_MODULES := \
 	FontArbutusSourceOverlay \
 	FontArvoLatoOverlay \
 	FontGoogleSansOverlay \
+	FontNotoSerifSourceOverlay \
 	FontRubikRubikOverlay \
 	FontCircularStdOverlay \
-	FontOnePlusSlateOverlay \
+	FontSlateForOnePlusOverlay \
 	FontAclonicaSourceOverlay \
 	FontAmaranteSourceOverlay \
 	FontBariolSourceOverlay \
 	FontCagliostroSourceOverlay \
-	FontComicSansSourceOverlay \
 	FontCoolstorySourceOverlay \
+    FontFiraSansSourceOverlay \
 	FontLGSmartGothicSourceOverlay \
+	FontNotoSerifSourceOverlay \
 	FontRosemarySourceOverlay \
+    FontSamsungOneSourceOverlay \
+	FontSFProOverlay \
 	FontSonySketchSourceOverlay \
 	FontSurferSourceOverlay \
-	FontBigNoodle \
-    FontBikoHanken \
-    FontComicNeue \
-    FontExo2 \
-    FontFinlandica \
-    FontGoodlight \
-    FontGravity \
-    FontInter \
-    FontLeagueMonoNarrow \
-    FontLeonSans \
-    FontMescla \
-    FontMittelschrift \
-    FontOdibee \
-    FontPanamericana \
+    FontAnaheim \
     FontPissel \
-    FontPTSansMono \
-    FontReemKufi \
     FontRoboto \
     FontRouterGothicNarrow \
     FontRoutedGothicRobotoCondensed \
-    FontSofiaSans \
-    FontSofiaSansSemiCondensed \
-	 FontLinotte \
+    FontTinkerbell \
+	FontEvolveSans \
+	FontLinotte \
 	IconPackCircularAndroidOverlay \
 	IconPackCircularPixelLauncherOverlay \
 	IconPackCircularPixelThemePickerOverlay \

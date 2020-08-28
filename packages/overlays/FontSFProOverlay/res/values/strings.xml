@@ -16,6 +16,6 @@
  */
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Headline / Body font Noto Serif / Source Sans Pro overlay -->
-    <string name="font_arvo_lato_overlay" translatable="false">Arvo / Lato</string>
+    <!-- Headline / Body font SF Pro overlay -->
+    <string name="font_sfpro_overlay" translatable="false">San Francisco Pro</string>
 </resources>

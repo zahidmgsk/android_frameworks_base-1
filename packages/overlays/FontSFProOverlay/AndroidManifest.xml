@@ -16,16 +16,16 @@
  */
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.theme.font.rubikrubik"
+    package="com.android.theme.font.sfpro"
     android:versionCode="1"
     android:versionName="1.0">
     <overlay android:targetPackage="android"
         android:category="android.theme.customization.font"
         android:priority="1"/>
 
-    <application android:label="@string/font_rubik_rubik_overlay" android:hasCode="false">
+    <application android:label="@string/font_sfpro_overlay" android:hasCode="false">
         <meta-data
             android:name="android.theme.customization.REQUIRED_SYSTEM_FONTS"
-            android:value="rubik,rubik-medium" />
+            android:value="san-francisco-pro-text,san-francisco-pro-text-medium,san-francisco-pro-display,san-francisco-pro-display-medium" />
     </application>
 </manifest>

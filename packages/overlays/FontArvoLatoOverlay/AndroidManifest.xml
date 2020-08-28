@@ -1,6 +1,6 @@
 <!--
 /**
- * Copyright (c) 2018, The Android Open Source Project
+ * Copyright (c) 2019, The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,6 @@
     <application android:label="@string/font_arvo_lato_overlay" android:hasCode="false">
         <meta-data
             android:name="android.theme.customization.REQUIRED_SYSTEM_FONTS"
-            android:value="arvo,arvo-medium,lato,lato-medium" />
+            android:value="arvo,arvo-bold,lato,lato-bold" />
     </application>
 </manifest>
