@@ -70,6 +70,15 @@ public class ThemesUtils {
             "com.android.systemui.brightness.slider.memestroke",
     };
 	
+	// Navbar styles
+    public static final String[] NAVBAR_STYLES = {
+        "com.android.system.navbar.stock", //0
+        "com.android.system.navbar.asus", //1
+        "com.android.system.navbar.oneplus", //2
+        "com.android.system.navbar.oneui", //3
+        "com.android.system.navbar.tecno", //4
+    };
+	
 	private static final String[] QS_TILE_THEMES = {
         "com.android.systemui.qstile.default", // 0
         "com.android.systemui.qstile.circletrim", // 1
@@ -215,6 +224,29 @@ public class ThemesUtils {
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
+        }
+    }
+	
+	// Unloads the navbar styles
+    private static void unloadNavbarStyle(IOverlayManager om, int userId) {
+        for (String style : NAVBAR_STYLES) {
+            try {
+                om.setEnabled(style, false, userId);
+            } catch (RemoteException e) {
+            }
+        }
+    }
+
+    // Set navbar style
+    public static void setNavbarStyle(IOverlayManager om, int userId, int navbarStyle) {
+        // Always unload navbar styles
+        unloadNavbarStyle(om, userId);
+
+        if (navbarStyle == 0) return;
+
+        try {
+            om.setEnabled(NAVBAR_STYLES[navbarStyle], true, userId);
+        } catch (RemoteException e) {
         }
     }
 }

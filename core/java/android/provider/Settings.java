@@ -6874,6 +6874,12 @@ public final class Settings {
          * @hide
          */
         public static final String BRIGHTNESS_SLIDER_STYLE = "brightness_slider_style";
+		
+		/**
+         * Switch between different navbar styles
+         * @hide
+         */
+        public static final String NAVBAR_STYLE = "navbar_style";
 
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
