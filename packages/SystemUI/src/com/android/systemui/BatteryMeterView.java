@@ -429,14 +429,12 @@ public class BatteryMeterView extends LinearLayout implements
                 mBatteryController.getEstimatedTimeRemainingString((String estimate) -> {
                     if (estimate != null) {
                         mBatteryPercentView.setText(estimate);
-                    } else if (mShowPercentMode == MODE_ON || mShowBatteryPercent == 2) {
-                        setPercentTextAtCurrentLevel();
+                        setContentDescription(getContext().getString(
+                                R.string.accessibility_battery_level_with_estimate,
+                                mLevel, estimate));
                     } else {
-                        mBatteryPercentView.setText("");
+                        setPercentTextAtCurrentLevel();
                     }
-                    setContentDescription(getContext().getString(
-                            R.string.accessibility_battery_level_with_estimate,
-                            mLevel, estimate));
                 });
             } else {
                 setPercentTextAtCurrentLevel();
@@ -481,12 +479,12 @@ public class BatteryMeterView extends LinearLayout implements
                     mBatteryPercentView.setTextAppearance(mPercentageStyleId);
                 }
                 if (mTextColor != 0) mBatteryPercentView.setTextColor(mTextColor);
+                updatePercentText();
                 addView(mBatteryPercentView,
                         new ViewGroup.LayoutParams(
                                 LayoutParams.WRAP_CONTENT,
                                 LayoutParams.MATCH_PARENT));
             }
-            updatePercentText();
             if (mBatteryStyle == BATTERY_STYLE_HIDDEN) {
                 mBatteryPercentView.setPaddingRelative(0, 0, 0, 0);
             } else {
