@@ -4763,14 +4763,6 @@ public final class Settings {
                 BOOLEAN_VALIDATOR;
 
         /**
-         * @hide
-         */
-        public static final String REFRESH_RATE_SETTING = "refresh_rate_setting";
-
-        /** @hide */
-        public static final Validator REFRESH_RATE_SETTING_VALIDATOR = NON_NEGATIVE_INTEGER_VALIDATOR;
-
-        /**
          * Force show navigation bar setting.
          * @hide
          */
@@ -7200,7 +7192,6 @@ public final class Settings {
             PRIVATE_SETTINGS.add(CAMERA_WAKE_SCREEN);
             PRIVATE_SETTINGS.add(CAMERA_SLEEP_ON_RELEASE);
             PRIVATE_SETTINGS.add(CAMERA_LAUNCH);
-            PRIVATE_SETTINGS.add(REFRESH_RATE_SETTING);
             PRIVATE_SETTINGS.add(NAVIGATION_BAR_MODE_OVERLAY);
             PRIVATE_SETTINGS.add(KILL_APP_LONGPRESS_BACK);
             PRIVATE_SETTINGS.add(POWER_MENU_ACTIONS);
@@ -7468,7 +7459,6 @@ public final class Settings {
             VALIDATORS.put(CAMERA_WAKE_SCREEN, CAMERA_WAKE_SCREEN_VALIDATOR);
             VALIDATORS.put(CAMERA_SLEEP_ON_RELEASE, CAMERA_SLEEP_ON_RELEASE_VALIDATOR);
             VALIDATORS.put(CAMERA_LAUNCH, CAMERA_LAUNCH_VALIDATOR);
-            VALIDATORS.put(REFRESH_RATE_SETTING, REFRESH_RATE_SETTING_VALIDATOR);
             VALIDATORS.put(NAVIGATION_BAR_MODE_OVERLAY, NAVIGATION_BAR_MODE_OVERLAY_VALIDATOR);
             VALIDATORS.put(KILL_APP_LONGPRESS_BACK, KILL_APP_LONGPRESS_BACK_VALIDATOR);
             VALIDATORS.put(POWER_MENU_ACTIONS, POWER_MENU_ACTIONS_VALIDATOR);
