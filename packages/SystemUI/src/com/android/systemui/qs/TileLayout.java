@@ -41,7 +41,7 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
 
     // Prototyping with less rows
     private final boolean mLessRows;
-    private int mMinRows = 3;
+    private int mMinRows = 1;
     private int mMaxColumns = NO_MAX_COLUMNS;
     private int mResourceColumns;
 
@@ -256,7 +256,7 @@ public class TileLayout extends ViewGroup implements QSTileLayout {
         boolean showTitles = Settings.System.getIntForUser(
                 mContext.getContentResolver(), Settings.System.OMNI_QS_TILE_TITLE_VISIBILITY, 1,
                 UserHandle.USER_CURRENT) == 1;
-        if (showTitles) {
+         if (showTitles) {
             mCellHeight = mContext.getResources().getDimensionPixelSize(R.dimen.qs_tile_height);
         } else {
             mCellHeight = mContext.getResources().getDimensionPixelSize(R.dimen.qs_tile_height_wo_label);

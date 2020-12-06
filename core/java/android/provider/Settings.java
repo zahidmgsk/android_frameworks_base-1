@@ -5034,12 +5034,6 @@ public final class Settings {
         public static final String OMNI_QS_LAYOUT_COLUMNS = "qs_layout_columns";
 
         /**
-         * Number of maximum qs rows to show
-         * @hide
-         */
-        public static final String QS_LAYOUT_ROWS = "qs_layout_rows";
-
-        /**
          * Whether to display qs tile titles in the qs panel
          * @hide
          */
@@ -5132,18 +5126,6 @@ public final class Settings {
          * @hide
          */
         public static final String NOTIFICATION_SOUND_VIB_SCREEN_ON = "notification_sound_vib_screen_on";
-
-        /**
-         * Whether to show QS brightness slider
-         * @hide
-         */
-        public static final String QS_SHOW_BRIGHTNESS = "qs_show_brightness";
-
-        /**
-         * Whether to show QS brightness slider on bottom
-         * @hide
-         */
-        public static final String QS_BRIGHTNESS_POSITION_BOTTOM = "qs_brightness_position_bottom";
 		
 		/**
          * Battery style
@@ -5353,19 +5335,6 @@ public final class Settings {
          * @hide
          */
         public static final String QS_QUICKBAR_COLUMNS = "qs_quickbar_columns";
-		
-		/**
-         * Whether to show QS brightness slider above qs footer
-         * Only applies when {@link QS_BRIGHTNESS_POSITION_BOTTOM} is enabled
-         * @hide
-         */
-        public static final String QS_SHOW_BRIGHTNESS_ABOVE_FOOTER = "qs_show_brightness_above_footer";
-		
-		/**
-         * Whether to show the brighness slider auto brightness toggle
-         * @hide
-         */
-        public static final String QS_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
 		 
 		 /**
          * Whether to use new QS panel bg tint or not
