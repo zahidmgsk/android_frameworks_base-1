@@ -5221,6 +5221,12 @@ public final class Settings {
          * @hide
          */
         public static final String SMART_CUTOFF_RESUME_TEMPERATURE = "smart_cutoff_resume_temperature";
+		
+		/**
+         * Control how to handle the display cutout
+         * @hide
+         */
+        public static final String SYSUI_COLORS_ACTIVE = "sysui_colors_active";
 
         /**
          * IMPORTANT: If you add a new public settings you also have to add it to
@@ -6745,6 +6751,7 @@ public final class Settings {
 			PRIVATE_SETTINGS.add(VIBRATE_ON_CONNECT);
            PRIVATE_SETTINGS.add(VIBRATE_ON_CALLWAITING);
            PRIVATE_SETTINGS.add(VIBRATE_ON_DISCONNECT);
+		   PRIVATE_SETTINGS.add(QS_PANEL_BG_ALPHA);
         }
 
         /**
